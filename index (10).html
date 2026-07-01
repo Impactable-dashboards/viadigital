@@ -1,0 +1,1405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Via Digital · Intelligence Room — Impactable</title>
+<meta name="description" content="Via Digital's private intelligence room, prepared by Impactable. Competitor white space, signal-composed audience worksheet, and the strategy build that comes next.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400;1,9..144,600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0D2D5E;--navy-deep:#071A38;--blue:#0099D1;--blue-soft:#5BB8E0;
+  --asphalt:#0A0A0C;--concrete:#121217;--court:#1B1B22;--bone:#F4F1EA;--chalk:#D8D4CB;--chalk-dim:#A8A49B;
+  --line:rgba(244,241,234,0.10);--line-soft:rgba(244,241,234,0.06);
+  --moss:#7BAA3E;--canopy:#D4FF3D;--terracotta:#C4521F;--hazard:#FF5A1F;--rust:#8B3A1A;--clay:#FFB627;--jet-pink:#FF2D7A;--plum:#5C2D6E;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:var(--asphalt);color:var(--bone);-webkit-font-smoothing:antialiased;line-height:1.5}
+body::before{content:'';position:fixed;inset:0;background-image:radial-gradient(circle at 1px 1px,rgba(244,241,234,0.035) 1px,transparent 0);background-size:4px 4px;pointer-events:none;z-index:1}
+.wrap{max-width:1200px;margin:0 auto;padding:40px 32px;position:relative;z-index:2}
+a{color:inherit}
+
+/* ===== ROOM NAV ===== */
+.nav{position:sticky;top:0;z-index:50;background:rgba(10,10,12,0.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--court)}
+.nav-inner{max-width:1280px;margin:0 auto;padding:12px 32px;display:flex;align-items:center;gap:22px}
+.nav-logo{font-family:Arial,sans-serif;font-weight:900;font-size:15px;letter-spacing:-0.4px;white-space:nowrap;cursor:pointer}
+.nav-logo .imp{color:var(--bone)}.nav-logo .able{color:var(--blue)}
+.nav-logo .sep{color:var(--chalk);opacity:0.4;font-weight:400;margin:0 4px}
+.nav-logo .doc{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--canopy);letter-spacing:0.12em;text-transform:uppercase}
+.nav-tabs{display:flex;gap:4px;margin-left:auto;align-items:center;overflow-x:auto}
+.ntab{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--chalk);opacity:0.7;text-decoration:none;letter-spacing:0.14em;text-transform:uppercase;white-space:nowrap;padding:9px 13px;border:1px solid transparent;cursor:pointer;transition:all 0.2s;background:none;display:inline-flex;align-items:center;gap:6px}
+.ntab:hover{opacity:1;color:var(--bone);border-color:var(--court)}
+.ntab.active{opacity:1;color:var(--blue);border-color:var(--court);background:var(--concrete)}
+.ntab .ext{font-size:11px;opacity:0.7}
+.ntab-cta{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.1em;text-transform:uppercase;padding:10px 16px;background:var(--canopy);color:var(--asphalt);font-weight:700;text-decoration:none;white-space:nowrap;transition:all 0.2s;border:1px solid var(--canopy)}
+.ntab-cta:hover{background:var(--bone);border-color:var(--bone)}
+
+/* view switching */
+.view{display:none}
+.view.active{display:block;animation:fade 0.4s ease}
+@keyframes fade{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+
+/* ===== HERO ===== */
+.hero{padding:64px 0 56px;border-bottom:1px solid var(--court);position:relative;overflow:hidden}
+.hero::after{content:'';position:absolute;right:-120px;top:-80px;width:400px;height:400px;background:radial-gradient(circle,rgba(27,155,209,0.18),transparent 65%);pointer-events:none;z-index:0}
+.hero::before{content:'';position:absolute;left:-150px;bottom:-150px;width:360px;height:360px;background:radial-gradient(circle,rgba(212,255,61,0.10),transparent 65%);pointer-events:none;z-index:0}
+.hero>*{position:relative;z-index:2}
+.tag{display:inline-flex;align-items:center;gap:8px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(--moss);padding:6px 14px;border:1px solid var(--moss);margin-bottom:26px;background:rgba(10,10,12,0.7)}
+.tag::before{content:'';width:6px;height:6px;background:var(--moss);border-radius:50%;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:0.3}}
+.hero h1{font-family:'Archivo Black',sans-serif;font-size:clamp(42px,6.4vw,80px);line-height:0.92;letter-spacing:-0.035em;margin-bottom:26px;text-transform:uppercase;max-width:960px}
+.hero h1 .blue{color:var(--blue)}
+.hero h1 .canopy{color:var(--canopy);font-style:italic;display:inline-block;transform:skewX(-5deg)}
+.hero h1 .outline{-webkit-text-stroke:2px var(--bone);color:transparent}
+.hero-sub{font-size:18px;line-height:1.6;max-width:820px;color:var(--chalk);opacity:0.9;margin-bottom:30px}
+.hero-sub strong{color:var(--bone)}
+.hero-meta{display:flex;gap:26px;flex-wrap:wrap;font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--chalk);opacity:0.6;letter-spacing:0.15em;text-transform:uppercase}
+.hero-meta strong{color:var(--blue);font-weight:700}
+.hero-cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+.btn{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:0.08em;text-transform:uppercase;padding:15px 24px;text-decoration:none;font-weight:700;transition:all 0.2s;display:inline-flex;align-items:center;gap:9px;cursor:pointer;border:1px solid}
+.btn-primary{background:var(--canopy);color:var(--asphalt);border-color:var(--canopy)}
+.btn-primary:hover{background:var(--bone);border-color:var(--bone);transform:translateY(-2px)}
+.btn-ghost{background:transparent;color:var(--bone);border-color:var(--court)}
+.btn-ghost:hover{border-color:var(--blue);color:var(--blue);transform:translateY(-2px)}
+.btn-blue{background:var(--blue);color:var(--navy-deep);border-color:var(--blue)}
+.btn-blue:hover{background:var(--blue-soft);border-color:var(--blue-soft);transform:translateY(-2px)}
+
+/* ===== SECTION SHELL ===== */
+.sec{padding:56px 0;border-bottom:1px solid var(--court);position:relative}
+.sec-num{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--jet-pink);letter-spacing:0.25em;margin-bottom:12px}
+.sec-title{font-family:'Archivo Black',sans-serif;font-size:clamp(26px,3.6vw,42px);line-height:0.96;letter-spacing:-0.025em;text-transform:uppercase;margin-bottom:18px}
+.sec-title em{color:var(--canopy);font-style:italic}
+.sec-title .blue{color:var(--blue)}
+.sec-title .terra{color:var(--terracotta)}
+.sec-intro{font-size:15px;line-height:1.65;max-width:860px;color:var(--chalk);opacity:0.85;margin-bottom:30px}
+.sec-intro a.kb{color:var(--blue);text-decoration:none;border-bottom:1px dotted var(--blue)}
+.sec-intro a.kb:hover{color:var(--canopy);border-color:var(--canopy)}
+.sub-title{font-family:'Archivo Black',sans-serif;font-size:20px;line-height:1;text-transform:uppercase;letter-spacing:-0.01em;margin:36px 0 8px;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.sub-title .tierbadge{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.1em;padding:4px 10px;border-radius:2px;font-weight:700}
+.tb-warm{background:rgba(212,255,61,0.14);color:var(--canopy);border:1px solid var(--moss)}
+.tb-abm{background:rgba(27,155,209,0.14);color:var(--blue);border:1px solid var(--blue)}
+.tb-cold{background:rgba(196,82,31,0.14);color:var(--hazard);border:1px solid var(--terracotta)}
+.sub-note{font-size:13.5px;color:var(--chalk);opacity:0.7;max-width:840px;margin-bottom:18px;line-height:1.55}
+
+/* ===== ROOM: WHAT'S INSIDE CARDS ===== */
+.room-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;margin-top:8px}
+.rc{padding:28px 26px;background:var(--concrete);border-top:3px solid var(--blue);position:relative;overflow:hidden;display:flex;flex-direction:column;min-height:270px}
+.rc::after{content:'';position:absolute;inset:0;background-image:radial-gradient(circle at 1px 1px,rgba(255,255,255,0.03) 1px,transparent 0);background-size:3px 3px;pointer-events:none}
+.rc>*{position:relative;z-index:2}
+.rc.delivered{border-top-color:var(--canopy)}
+.rc.next{border-top-color:var(--terracotta)}
+.rc-status{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:0.16em;text-transform:uppercase;margin-bottom:14px;display:inline-flex;align-items:center;gap:7px}
+.rc.delivered .rc-status{color:var(--canopy)}
+.rc.next .rc-status{color:var(--terracotta)}
+.rc-status::before{content:'';width:7px;height:7px;border-radius:50%;background:currentColor}
+.rc-h{font-family:'Archivo Black',sans-serif;font-size:22px;text-transform:uppercase;letter-spacing:-0.015em;line-height:1.02;margin-bottom:12px}
+.rc-d{font-size:13.5px;line-height:1.6;color:var(--chalk);opacity:0.85;margin-bottom:20px}
+.rc-foot{margin-top:auto;display:flex;gap:10px;flex-wrap:wrap}
+.rc-link{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.06em;text-transform:uppercase;padding:11px 16px;text-decoration:none;font-weight:700;border:1px solid;background:transparent;transition:all 0.2s;cursor:pointer}
+.rc.delivered .rc-link{color:var(--canopy);border-color:var(--moss)}
+.rc.delivered .rc-link:hover{background:var(--canopy);color:var(--asphalt)}
+.rc.next .rc-link{color:var(--terracotta);border-color:var(--terracotta)}
+.rc.next .rc-link:hover{background:var(--terracotta);color:var(--bone)}
+.rc .rc-link.solid-b{color:var(--blue);border-color:var(--blue)}
+.rc .rc-link.solid-b:hover{background:var(--blue);color:var(--navy-deep)}
+
+/* ===== CHANNEL BRIDGE ===== */
+.chan-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:8px}
+.chan{display:block;padding:30px;background:var(--concrete);border-left:3px solid var(--blue);text-decoration:none;transition:all 0.2s;position:relative;overflow:hidden}
+.chan::after{content:'';position:absolute;inset:0;background-image:radial-gradient(circle at 1px 1px,rgba(255,255,255,0.025) 1px,transparent 0);background-size:3px 3px;pointer-events:none}
+.chan>*{position:relative;z-index:2}
+.chan:hover{transform:translateY(-4px);border-left-color:var(--canopy);background:#1b1b22}
+.chan.g{border-left-color:var(--clay)}
+.chan-kick{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:0.16em;text-transform:uppercase;color:var(--blue);margin-bottom:12px}
+.chan.g .chan-kick{color:var(--clay)}
+.chan-h{font-family:'Archivo Black',sans-serif;font-size:24px;text-transform:uppercase;letter-spacing:-0.02em;line-height:1;margin-bottom:12px}
+.chan-h .blue{color:var(--blue)}.chan-h .clay{color:var(--clay)}
+.chan-d{font-size:13.5px;line-height:1.6;color:var(--chalk);opacity:0.82;margin-bottom:16px}
+.chan-go{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:var(--bone);display:inline-flex;align-items:center;gap:8px}
+.chan-go .arr{transition:transform 0.2s}
+.chan:hover .chan-go .arr{transform:translateX(5px)}
+
+/* ===== STRATEGY BRIDGE (the big CTA) ===== */
+.strat{margin-top:8px;padding:48px;background:linear-gradient(160deg,#14141a 0%,#0c0c10 100%);border:1px solid var(--blue);position:relative;overflow:hidden}
+.strat::before{content:'';position:absolute;inset:0;background-image:radial-gradient(circle at 1px 1px,rgba(255,255,255,0.04) 1px,transparent 0);background-size:3px 3px;pointer-events:none}
+.strat svg{position:absolute;top:-30px;right:-30px;width:260px;height:260px;opacity:0.35;pointer-events:none}
+.strat>*{position:relative;z-index:2}
+.strat-kick{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--canopy);margin-bottom:14px}
+.strat-h{font-family:'Archivo Black',sans-serif;font-size:clamp(28px,3.6vw,44px);line-height:0.98;letter-spacing:-0.025em;text-transform:uppercase;margin-bottom:16px;max-width:780px}
+.strat-h em{color:var(--canopy);font-style:italic}
+.strat-h .blue{color:var(--blue)}
+.strat-sub{font-size:15px;line-height:1.65;max-width:720px;color:var(--chalk);opacity:0.9;margin-bottom:28px}
+.strat-sub strong{color:var(--bone)}
+.strat-body{display:grid;grid-template-columns:1.3fr 1fr;gap:32px;align-items:start}
+.strat-incl-label{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:var(--blue);margin-bottom:14px}
+.strat-incl{list-style:none;padding:0}
+.strat-incl li{font-size:13.5px;line-height:1.5;color:var(--chalk);opacity:0.92;padding:10px 0 10px 26px;position:relative;border-bottom:1px solid rgba(255,255,255,0.08)}
+.strat-incl li:last-child{border-bottom:none}
+.strat-incl li::before{content:'';position:absolute;left:0;top:16px;width:12px;height:2px;background:var(--canopy)}
+.price-box{padding:28px;background:rgba(0,0,0,0.25);border:1px solid var(--court);text-align:center}
+.price-label{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:var(--chalk);opacity:0.7;margin-bottom:10px}
+.price-num{font-family:'Archivo Black',sans-serif;font-size:56px;line-height:0.9;color:var(--canopy);letter-spacing:-0.03em}
+.price-note{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--chalk);opacity:0.7;margin:10px 0 22px;line-height:1.5}
+.price-box .btn{width:100%;justify-content:center}
+.strat-fine{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--chalk);opacity:0.55;margin-top:22px;line-height:1.6;letter-spacing:0.03em}
+
+/* ===== ENGAGEMENT LADDER ===== */
+.engage{margin-top:8px;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:0}
+.eng-step{padding:22px 20px;background:var(--concrete);border:1px solid var(--court);border-top-width:3px;position:relative}
+.eng-step.e1{border-top-color:var(--canopy)}.eng-step.e2{border-top-color:var(--terracotta)}
+.eng-step.e3{border-top-color:var(--blue)}.eng-step.e4{border-top-color:var(--moss)}
+.eng-n{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:0.12em;text-transform:uppercase;color:var(--chalk);opacity:0.5;margin-bottom:6px}
+.eng-h{font-family:'Archivo Black',sans-serif;font-size:15px;text-transform:uppercase;letter-spacing:-0.01em;margin-bottom:6px;line-height:1.05}
+.eng-step.e1 .eng-h{color:var(--canopy)}.eng-step.e2 .eng-h{color:var(--terracotta)}.eng-step.e3 .eng-h{color:var(--blue)}.eng-step.e4 .eng-h{color:var(--moss)}
+.eng-d{font-size:12px;line-height:1.5;color:var(--chalk);opacity:0.8}
+.eng-price{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;color:var(--clay);margin-top:8px}
+
+/* ===== WORKSHEET VIEW: subnav banner ===== */
+.wsbar{display:flex;align-items:center;gap:14px;flex-wrap:wrap;padding:20px 0 0}
+.wsbar .back{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--chalk);opacity:0.7;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:7px}
+.wsbar .back:hover{opacity:1;color:var(--blue)}
+.wsbar .sp{margin-left:auto;display:flex;gap:10px;flex-wrap:wrap}
+
+/* ===== INTERACTIVE LADDER ===== */
+.ladder{display:flex;align-items:stretch;gap:0;margin:28px 0 8px;flex-wrap:wrap}
+.rung{flex:1;min-width:150px;padding:18px 16px;background:var(--concrete);border:1px solid var(--court);border-left-width:3px;position:relative;cursor:pointer;transition:all 0.22s}
+.rung:hover{transform:translateY(-4px);background:#1b1b22}
+.rung.r1{border-left-color:var(--canopy)}.rung.r2{border-left-color:var(--moss)}
+.rung.r3{border-left-color:var(--blue)}.rung.r4{border-left-color:var(--terracotta)}
+.rung.r1.active{box-shadow:0 0 22px rgba(212,255,61,0.25),0 0 0 1px var(--canopy) inset}
+.rung.r2.active{box-shadow:0 0 22px rgba(123,170,62,0.22),0 0 0 1px var(--moss) inset}
+.rung.r3.active{box-shadow:0 0 22px rgba(27,155,209,0.22),0 0 0 1px var(--blue) inset}
+.rung.r4.active{box-shadow:0 0 22px rgba(196,82,31,0.22),0 0 0 1px var(--terracotta) inset}
+.rung-n{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:0.12em;text-transform:uppercase;color:var(--chalk);opacity:0.5;margin-bottom:6px}
+.rung-h{font-family:'Archivo Black',sans-serif;font-size:15px;text-transform:uppercase;letter-spacing:-0.01em;margin-bottom:5px}
+.rung.r1 .rung-h{color:var(--canopy)}.rung.r2 .rung-h{color:var(--moss)}.rung.r3 .rung-h{color:var(--blue)}.rung.r4 .rung-h{color:var(--terracotta)}
+.rung-cpl{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;margin-bottom:6px}
+.rung.r1 .rung-cpl{color:var(--canopy)}.rung.r2 .rung-cpl{color:var(--moss)}.rung.r3 .rung-cpl{color:var(--blue)}.rung.r4 .rung-cpl{color:var(--hazard)}
+.rung-d{font-size:11.5px;line-height:1.45;color:var(--chalk);opacity:0.78}
+.rung-arrow{display:flex;align-items:center;color:var(--chalk-dim);font-size:20px;padding:0 2px}
+.ladder-detail{margin-top:18px;padding:22px 24px;background:var(--concrete);border-left:3px solid var(--canopy);font-size:14px;line-height:1.6;color:var(--chalk);min-height:84px;transition:border-color 0.2s}
+.ladder-detail .ld-h{font-family:'Archivo Black',sans-serif;font-size:15px;text-transform:uppercase;letter-spacing:-0.01em;color:var(--bone);margin-bottom:6px}
+.ladder-detail .ld-bench{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--clay);margin-top:8px}
+.bench-src{font-size:12px;color:var(--chalk);opacity:0.6;margin-top:14px;font-style:italic}
+.bench-src a{color:var(--blue);text-decoration:none;border-bottom:1px dotted var(--blue)}
+
+/* PERSONA / AUDIENCE CARDS */
+.aud-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(330px,1fr));gap:16px;margin-top:8px}
+.aud-card{padding:24px;background:var(--concrete);border-top:3px solid var(--canopy);position:relative;overflow:hidden;display:flex;flex-direction:column}
+.aud-card::after{content:'';position:absolute;inset:0;background-image:radial-gradient(circle at 1px 1px,rgba(255,255,255,0.03) 1px,transparent 0);background-size:3px 3px;pointer-events:none}
+.aud-card>*{position:relative;z-index:2}
+.aud-card.abm{border-top-color:var(--blue)}
+.aud-card.cold{border-top-color:var(--terracotta)}
+.aud-kicker{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:0.16em;text-transform:uppercase;color:var(--canopy);margin-bottom:8px}
+.aud-card.abm .aud-kicker{color:var(--blue)}.aud-card.cold .aud-kicker{color:var(--terracotta)}
+.aud-name{font-family:'Archivo Black',sans-serif;font-size:19px;text-transform:uppercase;letter-spacing:-0.015em;line-height:1.05;margin-bottom:12px}
+.aud-rows{display:flex;flex-direction:column;gap:0;margin-bottom:12px}
+.aud-row{display:grid;grid-template-columns:96px 1fr;gap:10px;padding:7px 0;border-top:1px solid var(--court);font-size:12.5px;line-height:1.5}
+.aud-row .k{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:0.08em;text-transform:uppercase;color:var(--chalk);opacity:0.55;padding-top:2px}
+.aud-row .v{color:var(--chalk);opacity:0.92}
+.mono-tag{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:10.5px;background:var(--asphalt);color:var(--blue-soft);padding:2px 7px;margin:2px 4px 2px 0;border:1px solid var(--court);border-radius:2px}
+.aud-why{margin-top:auto;padding:12px;background:var(--asphalt);border-left:2px solid var(--canopy);font-size:12px;line-height:1.5;color:var(--bone)}
+.aud-card.abm .aud-why{border-left-color:var(--blue)}.aud-card.cold .aud-why{border-left-color:var(--terracotta)}
+.aud-why .lbl{font-family:'JetBrains Mono',monospace;font-size:8.5px;letter-spacing:0.12em;text-transform:uppercase;color:var(--canopy);display:block;margin-bottom:4px}
+.aud-card.abm .aud-why .lbl{color:var(--blue)}.aud-card.cold .aud-why .lbl{color:var(--terracotta)}
+.aud-size{margin-left:auto;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.06em;color:var(--clay)}
+
+/* BUDGET INTERACTIVE */
+.budget{margin-top:30px;padding:28px;background:linear-gradient(160deg,#14141a 0%,#0c0c10 100%);border:1px solid var(--blue);position:relative;overflow:hidden}
+.budget::before{content:'';position:absolute;inset:0;background-image:radial-gradient(circle at 1px 1px,rgba(255,255,255,0.04) 1px,transparent 0);background-size:3px 3px;pointer-events:none}
+.budget>*{position:relative;z-index:2}
+.budget-top{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;margin-bottom:16px}
+.budget-label{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--canopy)}
+.budget-toggle{display:flex;gap:4px;background:rgba(0,0,0,0.3);padding:4px;border:1px solid var(--court)}
+.bt-btn{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.06em;text-transform:uppercase;padding:8px 14px;background:transparent;color:var(--chalk);border:none;cursor:pointer;transition:all 0.2s}
+.bt-btn.active{background:var(--canopy);color:var(--asphalt);font-weight:700}
+.budget-bar{display:flex;height:50px;border:1px solid var(--court);overflow:hidden;margin-bottom:16px}
+.budget-bar>div{display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;letter-spacing:0.05em;text-transform:uppercase;text-align:center;padding:0 6px;transition:flex 0.6s cubic-bezier(.7,0,.3,1);overflow:hidden;white-space:nowrap}
+.budget-bar .b-warm{background:var(--canopy);color:var(--asphalt)}
+.budget-bar .b-abm{background:var(--blue);color:var(--navy-deep)}
+.budget-bar .b-cold{background:var(--terracotta);color:var(--bone)}
+.budget-note{font-size:13.5px;line-height:1.6;color:var(--chalk);opacity:0.9}
+.budget-note strong{color:var(--bone)}
+.budget-cap{margin-top:14px;padding:12px 14px;background:rgba(255,90,31,0.08);border-left:2px solid var(--hazard);font-size:12.5px;line-height:1.5;color:var(--chalk)}
+.budget-cap b{color:var(--hazard)}
+
+/* TABLES */
+.sig-table,.kw-table{width:100%;border-collapse:collapse;font-size:13px;margin-top:8px}
+.sig-table th,.sig-table td,.kw-table th,.kw-table td{padding:12px 13px;text-align:left;border-bottom:1px solid var(--court);vertical-align:top;line-height:1.45}
+.sig-table th{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:var(--blue);border-bottom:1px solid var(--blue)}
+.sig-table td{color:var(--chalk);opacity:0.9}
+.sig-table td.sig{font-weight:700;color:var(--bone);opacity:1}
+.sig-table tr:hover td{background:rgba(255,255,255,0.025)}
+.kw-table th{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:var(--canopy);border-bottom:1px solid var(--moss)}
+.kw-table td{color:var(--chalk);opacity:0.9}
+.kw-table td.kw{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--bone);opacity:1}
+.kw-table tr:hover td{background:rgba(255,255,255,0.025)}
+.intent-pill{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:0.08em;text-transform:uppercase;padding:3px 9px;white-space:nowrap;border-radius:2px}
+.i-high{background:rgba(212,255,61,0.14);color:var(--canopy);border:1px solid var(--moss)}
+.i-med{background:rgba(255,182,39,0.13);color:var(--clay);border:1px solid var(--clay)}
+.i-low{background:rgba(120,120,130,0.15);color:var(--chalk);border:1px solid var(--court)}
+
+.workflow{margin-top:24px;padding:24px;background:var(--concrete);border-left:3px solid var(--moss);position:relative;overflow:hidden}
+.workflow::after{content:'';position:absolute;inset:0;background-image:radial-gradient(circle at 1px 1px,rgba(255,255,255,0.025) 1px,transparent 0);background-size:3px 3px;pointer-events:none}
+.workflow>*{position:relative;z-index:2}
+.workflow-h{font-family:'Archivo Black',sans-serif;font-size:16px;text-transform:uppercase;letter-spacing:-0.01em;color:var(--moss);margin-bottom:10px}
+.workflow-steps{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.wstep{display:flex;align-items:center;gap:8px;font-size:12.5px;color:var(--chalk);opacity:0.9}
+.wstep .n{font-family:'JetBrains Mono',monospace;font-size:10px;width:20px;height:20px;display:flex;align-items:center;justify-content:center;background:var(--moss);color:var(--asphalt);font-weight:700;border-radius:50%;flex-shrink:0}
+.wstep .arr{color:var(--chalk-dim);margin:0 4px}
+
+.neg{margin-top:24px;padding:24px;background:var(--concrete);border-left:3px solid var(--terracotta)}
+.neg-h{font-family:'Archivo Black',sans-serif;font-size:16px;text-transform:uppercase;letter-spacing:-0.01em;color:var(--terracotta);margin-bottom:12px}
+.neg-row{display:grid;grid-template-columns:170px 1fr;gap:14px;padding:9px 0;border-top:1px solid var(--court);font-size:12.5px;line-height:1.5}
+.neg-row .k{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.06em;text-transform:uppercase;color:var(--hazard)}
+.neg-row .v{color:var(--chalk);opacity:0.9}
+.neg-row .v .ng{font-family:'JetBrains Mono',monospace;color:var(--bone)}
+
+.rec{margin-top:24px;padding:26px;background:linear-gradient(160deg,#14141a 0%,#0c0c10 100%);border:1px solid var(--canopy);position:relative;overflow:hidden}
+.rec::before{content:'';position:absolute;inset:0;background-image:radial-gradient(circle at 1px 1px,rgba(255,255,255,0.04) 1px,transparent 0);background-size:3px 3px;pointer-events:none}
+.rec>*{position:relative;z-index:2}
+.rec-label{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--canopy);margin-bottom:10px}
+.rec-h{font-family:'Archivo Black',sans-serif;font-size:20px;text-transform:uppercase;letter-spacing:-0.01em;margin-bottom:12px}
+.rec-h em{color:var(--canopy);font-style:italic}
+.rec ol{margin:0;padding-left:20px}
+.rec li{font-size:13.5px;line-height:1.7;color:var(--chalk);opacity:0.92;margin-bottom:4px}
+.rec li strong{color:var(--bone)}
+
+/* TIMELINE INTERACTIVE */
+.timeline{display:flex;gap:0;margin-top:28px;flex-wrap:wrap}
+.tl-step{flex:1;min-width:150px;padding:18px 16px;background:var(--concrete);border:1px solid var(--court);border-top-width:3px;border-top-color:var(--blue);cursor:pointer;transition:all 0.22s;position:relative}
+.tl-step:hover{background:#1b1b22;transform:translateY(-3px)}
+.tl-step.active{box-shadow:0 0 22px rgba(27,155,209,0.2),0 0 0 1px var(--blue) inset}
+.tl-when{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:0.1em;text-transform:uppercase;color:var(--blue);margin-bottom:8px}
+.tl-h{font-family:'Archivo Black',sans-serif;font-size:14px;text-transform:uppercase;letter-spacing:-0.01em;color:var(--bone);line-height:1.05}
+.tl-detail{margin-top:18px;padding:22px 24px;background:var(--concrete);border-left:3px solid var(--blue);font-size:14px;line-height:1.65;color:var(--chalk);min-height:70px}
+.tl-detail .td-h{font-family:'Archivo Black',sans-serif;font-size:15px;text-transform:uppercase;letter-spacing:-0.01em;color:var(--bone);margin-bottom:6px}
+.tl-detail b{color:var(--bone)}
+
+/* RESOURCES */
+.res-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px;margin-top:8px}
+.res-card{display:block;padding:20px;background:var(--concrete);border-left:3px solid var(--blue);text-decoration:none;transition:all 0.2s}
+.res-card:hover{background:#1b1b22;transform:translateY(-3px);border-left-color:var(--canopy)}
+.res-kicker{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:0.12em;text-transform:uppercase;color:var(--blue);margin-bottom:8px}
+.res-h{font-family:'Inter',sans-serif;font-weight:800;font-size:15px;line-height:1.25;color:var(--bone);margin-bottom:8px}
+.res-d{font-size:12.5px;line-height:1.5;color:var(--chalk);opacity:0.78}
+.res-link{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--canopy);margin-top:10px;display:inline-block;word-break:break-all}
+
+.next{margin-top:30px;padding:40px;background:linear-gradient(160deg,#14141a 0%,#0c0c10 100%);border:1px solid var(--blue);position:relative;overflow:hidden}
+.next::before{content:'';position:absolute;inset:0;background-image:radial-gradient(circle at 1px 1px,rgba(255,255,255,0.04) 1px,transparent 0);background-size:3px 3px;pointer-events:none}
+.next>*{position:relative;z-index:2}
+.next-label{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--canopy);margin-bottom:12px}
+.next-h{font-family:'Archivo Black',sans-serif;font-size:26px;text-transform:uppercase;letter-spacing:-0.015em;margin-bottom:14px;line-height:1.05}
+.next-h em{color:var(--canopy);font-style:italic}
+.next-body{font-size:14.5px;line-height:1.6;color:var(--chalk);opacity:0.9;max-width:820px;margin-bottom:22px}
+
+.foot{padding:44px 0 24px;text-align:center}
+.foot-line{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--chalk);opacity:0.4;letter-spacing:0.18em;text-transform:uppercase}
+
+@media(max-width:900px){
+  .strat-body{grid-template-columns:1fr;gap:22px}
+  .chan-grid{grid-template-columns:1fr}
+}
+@media(max-width:820px){
+  .wrap{padding:32px 20px}
+  .nav-inner{padding:12px 18px;gap:12px}
+  .nav-logo .doc{display:none}
+  .ladder,.timeline{flex-direction:column}.rung-arrow{transform:rotate(90deg);justify-content:center}
+  .neg-row,.aud-row{grid-template-columns:1fr}
+  .strat{padding:32px 24px}
+}
+
+/* ===== COMPETITOR INTEL: full white-space report ===== */
+.sub-title.plain{display:block}
+.sub-title em{color:var(--canopy);font-style:italic}
+.sub-title .terra{color:var(--terracotta);font-style:italic}
+
+/* THESIS / UVP block */
+.uvp{padding:42px;background:linear-gradient(160deg,#14141a 0%,#0c0c10 100%);border:1px solid var(--blue);margin-top:30px;position:relative;overflow:hidden}
+.uvp::before{content:'';position:absolute;inset:0;background-image:radial-gradient(circle at 1px 1px,rgba(255,255,255,0.04) 1px,transparent 0);background-size:3px 3px;pointer-events:none}
+.uvp svg{position:absolute;top:-30px;right:-30px;width:220px;height:220px;opacity:0.4;pointer-events:none}
+.uvp-label{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--blue);margin-bottom:14px;position:relative;z-index:2}
+.uvp-statement{font-family:'Archivo Black',sans-serif;font-size:clamp(22px,2.6vw,32px);line-height:1.05;letter-spacing:-0.02em;text-transform:uppercase;color:var(--bone);position:relative;z-index:2}
+.uvp-statement .em{color:var(--canopy);font-style:italic}
+.uvp-statement .blue{color:var(--blue)}
+
+/* COMPETITOR CARDS */
+.comp-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(330px,1fr));gap:16px;margin-top:8px}
+.comp-card{padding:26px 24px;background:var(--concrete);border-top:3px solid var(--blue);position:relative;overflow:hidden;display:flex;flex-direction:column}
+.comp-card::after{content:'';position:absolute;inset:0;background-image:radial-gradient(circle at 1px 1px,rgba(255,255,255,0.03) 1px,transparent 0);background-size:3px 3px;pointer-events:none}
+.comp-card>*{position:relative;z-index:2}
+.comp-card.t1{border-color:var(--blue)}
+.comp-card.t1b{border-color:var(--terracotta)}
+.comp-card.t2{border-color:var(--clay)}
+.comp-card.t3{border-color:var(--chalk)}
+.comp-tier{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:0.18em;text-transform:uppercase;color:var(--blue);margin-bottom:8px}
+.comp-card.t1b .comp-tier{color:var(--terracotta)}
+.comp-card.t2 .comp-tier{color:var(--clay)}
+.comp-card.t3 .comp-tier{color:var(--chalk)}
+.comp-name{font-family:'Archivo Black',sans-serif;font-size:23px;text-transform:uppercase;letter-spacing:-0.015em;line-height:1;margin-bottom:4px}
+.comp-url{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--chalk);opacity:0.5;margin-bottom:14px;letter-spacing:0.04em}
+.comp-pos{font-family:'Fraunces',serif;font-style:italic;font-size:15px;color:var(--blue-soft);line-height:1.35;margin-bottom:14px}
+.comp-row{display:flex;gap:10px;font-size:12.5px;line-height:1.5;padding:7px 0;border-top:1px solid var(--court)}
+.comp-row .k{font-family:'JetBrains Mono',monospace;font-size:9.5px;letter-spacing:0.08em;text-transform:uppercase;color:var(--chalk);opacity:0.55;min-width:74px;flex-shrink:0;padding-top:2px}
+.comp-row .v{color:var(--chalk);opacity:0.9}
+.comp-take{margin-top:14px;padding:14px;background:var(--asphalt);border-left:2px solid var(--canopy);font-size:12.5px;line-height:1.55;color:var(--bone)}
+.comp-card.t1b .comp-take{border-left-color:var(--terracotta)}
+.comp-take .lbl{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:0.12em;text-transform:uppercase;color:var(--canopy);display:block;margin-bottom:5px}
+.comp-card.t1b .comp-take .lbl{color:var(--terracotta)}
+
+/* MATRIX TABLE */
+.matrix-wrap{overflow-x:auto;margin-top:8px;border:1px solid var(--court)}
+table.matrix{width:100%;border-collapse:collapse;font-size:12px;min-width:760px}
+table.matrix th,table.matrix td{padding:12px 12px;text-align:left;border-bottom:1px solid var(--court);border-right:1px solid var(--court);vertical-align:top;line-height:1.4}
+table.matrix th{background:#14141a;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;color:var(--bone);font-weight:700}
+table.matrix td:first-child{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.06em;text-transform:uppercase;color:var(--chalk);opacity:0.7;background:var(--concrete)}
+table.matrix td{color:var(--chalk);opacity:0.92}
+table.matrix tr:nth-child(even) td:not(:first-child){background:rgba(255,255,255,0.012)}
+.gate-yes{color:var(--terracotta);font-weight:700}
+.gate-none{color:var(--canopy);font-weight:700}
+
+/* SATURATION TABLE */
+.sat-table{width:100%;border-collapse:collapse;font-size:13px;margin-top:8px}
+.sat-table th,.sat-table td{padding:13px 14px;text-align:left;border-bottom:1px solid var(--court);vertical-align:top;line-height:1.45}
+.sat-table th{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:var(--terracotta);border-bottom:1px solid var(--terracotta)}
+.sat-table td{color:var(--chalk);opacity:0.88}
+.sat-table td.theme{font-weight:700;color:var(--bone);opacity:1}
+.sat-pill{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:0.1em;text-transform:uppercase;padding:3px 9px;background:rgba(196,82,31,0.15);color:var(--hazard);border:1px solid var(--terracotta);white-space:nowrap}
+
+/* WHITE SPACE cards */
+.ws-grid{display:grid;grid-template-columns:1fr;gap:16px;margin-top:8px}
+.ws-card{padding:28px;background:var(--concrete);border-left:3px solid var(--canopy);position:relative;overflow:hidden}
+.ws-card::after{content:'';position:absolute;inset:0;background-image:radial-gradient(circle at 1px 1px,rgba(255,255,255,0.025) 1px,transparent 0);background-size:3px 3px;pointer-events:none}
+.ws-card.warn{border-left-color:var(--terracotta)}
+.ws-card>*{position:relative;z-index:2}
+.ws-head{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin-bottom:16px}
+.ws-no{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--moss);letter-spacing:0.1em}
+.ws-card.warn .ws-no{color:var(--terracotta)}
+.ws-name{font-family:'Archivo Black',sans-serif;font-size:21px;text-transform:uppercase;letter-spacing:-0.015em;line-height:1.05}
+.ws-name .em{color:var(--canopy)}
+.ws-card.warn .ws-name .em{color:var(--hazard)}
+.ws-size{margin-left:auto;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;padding:4px 12px;background:rgba(212,255,61,0.12);color:var(--canopy);border:1px solid var(--moss)}
+.ws-card.warn .ws-size{background:rgba(196,82,31,0.14);color:var(--hazard);border-color:var(--terracotta)}
+.ws-line{display:grid;grid-template-columns:auto 1fr;gap:14px;padding:9px 0;font-size:13.5px;line-height:1.55;border-top:1px solid var(--court)}
+.ws-line .k{font-family:'JetBrains Mono',monospace;font-size:9.5px;letter-spacing:0.1em;text-transform:uppercase;color:var(--chalk);opacity:0.55;padding-top:3px;min-width:90px}
+.ws-line .v{color:var(--chalk);opacity:0.92}
+
+/* HOOK / pain blocks */
+.hooks-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;margin-top:8px}
+.hook-col{padding:26px;background:var(--concrete);border-top:3px solid var(--blue)}
+.hook-col.aware{border-color:var(--canopy)}
+.hook-col.engaged{border-color:var(--terracotta)}
+.hook-stage{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.15em;text-transform:uppercase;color:var(--blue);margin-bottom:4px}
+.hook-col.aware .hook-stage{color:var(--moss)}
+.hook-col.engaged .hook-stage{color:var(--terracotta)}
+.hook-sub{font-size:12px;color:var(--chalk);opacity:0.6;margin-bottom:16px}
+.hook{font-family:'Fraunces',serif;font-style:italic;font-size:15.5px;line-height:1.4;color:var(--bone);padding:12px 0;border-top:1px solid var(--court)}
+
+/* PAIN table */
+.pain-table{width:100%;border-collapse:collapse;font-size:13px;margin-top:8px}
+.pain-table th,.pain-table td{padding:13px 14px;text-align:left;border-bottom:1px solid var(--court);vertical-align:top;line-height:1.5}
+.pain-table th{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:var(--blue);border-bottom:1px solid var(--blue)}
+.pain-table td{color:var(--chalk);opacity:0.9}
+.pain-table td.quote{font-family:'Fraunces',serif;font-style:italic;color:var(--bone);opacity:1}
+.pain-table td.win{color:var(--canopy)}
+
+/* TARGETING */
+.target-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin-top:8px}
+.tcol{padding:24px;background:var(--concrete);border-top:3px solid var(--moss)}
+.tcol.sec2{border-color:var(--blue)}
+.tcol.low{border-color:var(--terracotta)}
+.tcol-h{font-family:'Archivo Black',sans-serif;font-size:16px;text-transform:uppercase;letter-spacing:-0.01em;margin-bottom:14px;color:var(--moss)}
+.tcol.sec2 .tcol-h{color:var(--blue)}
+.tcol.low .tcol-h{color:var(--terracotta)}
+.tcol li{list-style:none;font-size:13px;line-height:1.5;color:var(--chalk);opacity:0.88;padding:10px 0 10px 18px;position:relative;border-top:1px solid var(--court)}
+.tcol li::before{content:'';position:absolute;left:0;top:17px;width:9px;height:2px;background:var(--moss)}
+.tcol.sec2 li::before{background:var(--blue)}
+.tcol.low li::before{background:var(--terracotta)}
+
+/* TAKEAWAYS */
+.take-list{margin-top:8px}
+.take{display:grid;grid-template-columns:auto 1fr;gap:18px;padding:18px 0;border-bottom:1px solid var(--court);align-items:start}
+.take-n{font-family:'Archivo Black',sans-serif;font-size:30px;color:var(--chalk-dim);line-height:0.8;min-width:42px}
+.take.hot .take-n{color:var(--canopy)}
+.take.warn .take-n{color:var(--terracotta)}
+.take-body{font-size:14.5px;line-height:1.6;color:var(--chalk);opacity:0.9}
+.take-body strong{color:var(--bone);font-weight:700}
+.take.hot .take-body strong{color:var(--canopy)}
+.take.warn .take-body strong{color:var(--hazard)}
+
+/* --- Via Digital additions --- */
+.comp-card.subject{border-color:var(--canopy);background:linear-gradient(160deg,rgba(212,255,61,0.05),var(--concrete) 55%)}
+.comp-card.subject .comp-tier{color:var(--canopy)}
+table.matrix tr.ref td{background:rgba(212,255,61,0.06)}
+table.matrix tr.ref td:first-child{color:var(--canopy);opacity:1}
+.sat-pill.med{background:rgba(255,182,39,0.13);color:var(--clay);border-color:var(--clay)}
+.ws-card.opening{border-left-color:var(--blue);background:linear-gradient(160deg,#14141a 0%,#0c0c10 100%)}
+</style>
+</head>
+<body>
+
+<!-- ===== ROOM NAV ===== -->
+<nav class="nav">
+  <div class="nav-inner">
+    <span class="nav-logo" onclick="showView('overview')"><span class="imp">IMPACT</span><span class="able">ABLE</span><span class="sep">///</span><span class="doc">Via Digital · Intelligence Room</span></span>
+    <div class="nav-tabs">
+      <button class="ntab active" data-view="overview" onclick="showView('overview')">Overview</button>
+      <button class="ntab" data-view="competitor" onclick="showView('competitor')">Competitor Intel</button>
+      <button class="ntab" data-view="worksheet" onclick="showView('worksheet')">Audience Worksheet</button>
+      <button class="ntab" data-view="roadmap" onclick="showView('roadmap')">Roadmap</button>
+      <a class="ntab-cta" href="https://landbot.online/v3/H-2201417-SPMOARYH76NAHLP2/index.html" target="_blank" rel="noopener">Book a Call →</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ============================================================= -->
+<!-- ===================== VIEW: OVERVIEW ======================== -->
+<!-- ============================================================= -->
+<div class="view active" id="view-overview">
+<div class="wrap">
+
+  <section class="hero">
+    <span class="tag">Private intelligence room · prepared for Via Digital</span>
+    <h1>The <span class="canopy">seam</span><br>nobody is<br><span class="outline">standing</span> <span class="blue">in.</span></h1>
+    <p class="hero-sub">This room holds the diagnostics Impactable built for Via Digital, and the path they open. The competitive white space named the position: <strong>a data-disciplined, transparently priced LinkedIn and Google specialist built for DACH industrial and Mittelstand buyers</strong>, the one intersection no competitor in the set occupies. Inside: the competitor white space that sets the thesis, the audience plan that turns it into a build, and the roadmap for acting on it.</p>
+    <div class="hero-cta">
+      <button class="btn btn-primary" onclick="showView('competitor')">See the competitor intel →</button>
+      <button class="btn btn-blue" onclick="showView('worksheet')">Open the audience worksheet →</button>
+      <button class="btn btn-ghost" onclick="showView('roadmap')">View the roadmap →</button>
+    </div>
+    <div class="hero-meta" style="margin-top:32px">
+      <span>Prepared by <strong>Impactable</strong></span>
+      <span>Status <strong>LinkedIn Marketing Partner</strong></span>
+      <span>Anchor <strong>the industrial-Mittelstand seam</strong></span>
+      <span>Date <strong>July 1, 2026</strong></span>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="sec-num">01 / What's in this room</div>
+    <h2 class="sec-title">Two diagnostics, <em>delivered.</em> One <span class="blue">roadmap</span> forward.</h2>
+    <p class="sec-intro">Impactable's free Competitor Intel Report is two documents built by hand: the competitor white space, and the signal-composed audience worksheet. Both are done and sitting in this room. The Roadmap tab shows the path they open, scoped for a specialist agency, not a generic retainer.</p>
+    <div class="room-cards">
+      <div class="rc delivered">
+        <div class="rc-status">Delivered</div>
+        <div class="rc-h">Competitor Intel</div>
+        <div class="rc-d">Ten DACH B2B agencies mapped. What all of them say (specialist, lead gen, pipeline-not-vanity), and the five white spaces Via Digital can own, led by the proprietary-data-and-tooling edge nobody in the set claims.</div>
+        <div class="rc-foot">
+          <button class="rc-link" onclick="showView('competitor')">Open the intel →</button>
+        </div>
+      </div>
+      <div class="rc delivered">
+        <div class="rc-status">Delivered</div>
+        <div class="rc-h">Audience Worksheet</div>
+        <div class="rc-d">Who to reach and in what order, across LinkedIn native targeting, third-party signal overlays, and paid search, all sequenced by the audience efficiency ladder, engineered for Via Digital's DACH tech and industrial buyer.</div>
+        <div class="rc-foot">
+          <button class="rc-link" onclick="showView('worksheet')">Open the worksheet →</button>
+        </div>
+      </div>
+      <div class="rc next">
+        <div class="rc-status">Where it goes</div>
+        <div class="rc-h">The Roadmap</div>
+        <div class="rc-d">The diagnostics answer who and why. The Roadmap answers what's next: a one-time strategy build to operationalize the white space, and the two ways to go deeper with Impactable, tooling access and the DemandSense experts network.</div>
+        <div class="rc-foot">
+          <button class="rc-link" onclick="showView('roadmap')">See the roadmap →</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="sec-num">02 / Build on the doctrine</div>
+    <h2 class="sec-title">The <em>thinking</em> behind the room.</h2>
+    <p class="sec-intro">Every recommendation in this room is grounded in Impactable's published playbooks. Three worth reading.</p>
+    <div class="res-grid">
+      <a class="res-card" href="https://impactable.com/linkedin-ads-funnel-benchmarks/" target="_blank" rel="noopener">
+        <div class="res-kicker">Benchmark · the ladder</div>
+        <div class="res-h">The LinkedIn Ads Funnel That Actually Scales</div>
+        <div class="res-d">Real CPL benchmarks from 200+ B2B SaaS accounts, the efficiency-ladder data behind the spend-warm-first principle.</div>
+        <span class="res-link">impactable.com/linkedin-ads-funnel-benchmarks</span>
+      </a>
+      <a class="res-card" href="https://impactable.com/the-power-of-third-party-custom-audiences/" target="_blank" rel="noopener">
+        <div class="res-kicker">Method · signals</div>
+        <div class="res-h">The Power of Third-Party Custom Audiences</div>
+        <div class="res-d">How technographic and intent overlays move targeting from looks-like-the-ICP to is-in-market-now.</div>
+        <span class="res-link">impactable.com/the-power-of-third-party-custom-audiences</span>
+      </a>
+      <a class="res-card" href="https://impactable.com/linkedin-software/" target="_blank" rel="noopener">
+        <div class="res-kicker">Tooling · WebID</div>
+        <div class="res-h">DemandSense — Demand-Gen Platform</div>
+        <div class="res-d">De-anonymize site visitors and name the companies behind the traffic, the engine behind warm Tier 1 and the ABM list.</div>
+        <span class="res-link">impactable.com/linkedin-software</span>
+      </a>
+    </div>
+
+    <div class="next">
+      <div class="next-label">/// ready when you are</div>
+      <div class="next-h">The thesis is mapped. Now the <em>build.</em></div>
+      <p class="next-body">The competitor intel names the white space and the worksheet names the audience. The Roadmap tab lays out the one-time strategy build that turns it into an operating plan, and the two ways to go deeper with Impactable's tooling and expert network. Create. Connect. Capture.</p>
+      <div class="hero-cta" style="margin-top:0">
+        <button class="btn btn-primary" onclick="showView('roadmap')">View the roadmap →</button>
+        <a class="btn btn-blue" href="https://landbot.online/v3/H-2201417-SPMOARYH76NAHLP2/index.html" target="_blank" rel="noopener">Book a call →</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="foot">
+    <div class="foot-line">Impactable · LinkedIn Marketing Partner · Via Digital Intelligence Room · July 2026 · impactable.com</div>
+  </footer>
+
+</div>
+</div>
+<div class="view" id="view-competitor">
+<div class="wrap">
+
+  <div class="wsbar">
+    <a class="back" onclick="showView('overview')">‹ Back to the room</a>
+    <div class="sp">
+      <button class="btn btn-ghost" onclick="showView('worksheet')" style="padding:12px 18px;font-size:11px">Audience worksheet →</button>
+      <button class="btn btn-primary" onclick="showView('roadmap')" style="padding:12px 18px;font-size:11px">Roadmap →</button>
+    </div>
+  </div>
+
+  <section class="hero" style="padding-top:40px">
+    <span class="tag">Competitive white space · prepared for Via Digital</span>
+    <h1>Everyone says <span class="outline">specialist.</span><br>Nobody says <span class="canopy">the seam.</span></h1>
+    <p class="hero-sub">Ten DACH B2B agencies, one near-identical sentence between them: <strong>specialist not full-service, lead plus demand gen, pipeline not vanity metrics, a branded method.</strong> The field has made its own pitch undifferentiating. Via Digital's real edges, a visible data discipline and a genuine industrial and Austrian niche, sit directly on the widest unclaimed ground in the market. This is the map of where to stand.</p>
+    <div class="hero-meta">
+      <span>Scope <strong>10 agencies</strong></span>
+      <span>Method <strong>positioning · pricing · proof · gaps</strong></span>
+      <span>Prepared for <strong>Theresa Sturm</strong></span>
+      <span>Date <strong>July 1, 2026</strong></span>
+    </div>
+  </section>
+
+  <section class="sec" id="thesis">
+    <div class="sec-num">00 / The thesis</div>
+    <h2 class="sec-title">The opportunity isn't a louder <span class="terra">claim.</span><br>It's the <em>seam</em> nobody occupies.</h2>
+    <p class="sec-intro">Via Digital cannot out-scale YOYABA, out-guarantee inno-one, or out-content OMNIUS. It does not need to. The whole field is shouting the same four claims, and the three things Via Digital can actually own, a data-disciplined method, an industrial and Austrian niche, and transparent productized pricing, are precisely what almost no competitor is saying. The move is to fuse those three into one position. The recommended UVP: <strong>for DACH technology and industrial firms, Via Digital is the founder-led LinkedIn and Google Ads specialist that turns qualified pipeline into measurable revenue and teaches your team to own it, with transparent pricing and hands-on data discipline.</strong></p>
+    <div class="uvp">
+      <svg viewBox="0 0 100 100" preserveAspectRatio="none">
+        <path d="M 100 0 Q 80 20, 65 35 T 45 55 Q 30 70, 25 90" stroke="#D4FF3D" stroke-width="1.2" fill="none"/>
+        <circle cx="65" cy="35" r="3" fill="#D4FF3D"/><circle cx="45" cy="55" r="2.5" fill="#7BAA3E"/><circle cx="25" cy="90" r="3" fill="#0099D1"/>
+      </svg>
+      <div class="uvp-label">/// the ownable position</div>
+      <div class="uvp-statement">The specialist that turns pipeline into <span class="em">measurable revenue</span><br>and teaches your team to <span class="blue">own it.</span><br>Transparent pricing. <span class="em">Visible data discipline.</span></div>
+    </div>
+  </section>
+
+  <section class="sec" id="profiles">
+    <div class="sec-num">01 / The field</div>
+    <h2 class="sec-title">Ten agencies, <em>one subject.</em></h2>
+    <p class="sec-intro">Via Digital is profiled first as the subject; the nine that follow are the competitive set, from the Hamburg scale players to the adjacent organic specialist. The two cards worth reading twice are xhauer, the closest philosophical twin, and the data-tooling silence that runs across all nine.</p>
+    <div class="comp-grid">
+
+      <div class="comp-card subject">
+        <div class="comp-tier">Subject · the reference point</div>
+        <div class="comp-name">Via Digital</div>
+        <div class="comp-url">via-digital.at · Linz, Austria</div>
+        <div class="comp-pos">Boutique, founder-led B2B performance-marketing specialist for DACH tech and industry.</div>
+        <div class="comp-row"><span class="k">Scale</span><span class="v">Founded 2020. Owner-operated GmbH, ~9 staff. Founder: Theresa Sturm.</span></div>
+        <div class="comp-row"><span class="k">Pricing</span><span class="v">Coaching €6,600 (public). Managed retainers custom.</span></div>
+        <div class="comp-row"><span class="k">Proof</span><span class="v">100+ clients, 5.0 Google (self-reported). KEBA, Agrana, Panasonic Industry, ABB. Springer 2025, OMX stage.</span></div>
+        <div class="comp-take"><span class="lbl">▸ Strategic take</span>Credible specialist with an unusually strong founder brand and a rare transparent offer. Under-leverages its industrial and Austrian niche and its data discipline in outward messaging, which is exactly the opening.</div>
+      </div>
+
+      <div class="comp-card t1b">
+        <div class="comp-tier">Hamburg scale player · the ceiling</div>
+        <div class="comp-name">YOYABA</div>
+        <div class="comp-url">yoyaba.com</div>
+        <div class="comp-pos">"#1 Revenue Marketing Agency EMEA." German precision, Silicon Valley speed.</div>
+        <div class="comp-row"><span class="k">Scale</span><span class="v">Founded 2019. Hamburg. ~50 staff, ~$15M revenue (press, directories).</span></div>
+        <div class="comp-row"><span class="k">Pricing</span><span class="v">Paid mgmt from €5k/mo + % spend; content/SEO from €7.5k; full package from €22.5k/mo.</span></div>
+        <div class="comp-row"><span class="k">Proof</span><span class="v">Strong. Personio, HubSpot, Cognism, Teamviewer. Public case studies, media presence.</span></div>
+        <div class="comp-take"><span class="lbl">▸ Strategic take</span>The upmarket ceiling. Owns "revenue marketing" and funded-SaaS credibility, but prices and positions out of the SME and industrial segment. Not a fight to pick; a lane to avoid.</div>
+      </div>
+
+      <div class="comp-card t1b">
+        <div class="comp-tier">⚠ Vienna/Hamburg · closest twin</div>
+        <div class="comp-name">xhauer</div>
+        <div class="comp-url">xhauer.com</div>
+        <div class="comp-pos">"Performance-Content-Strategie": LinkedIn + Google remarketing plus systematic content.</div>
+        <div class="comp-row"><span class="k">Scale</span><span class="v">Founded ~2021/22. Vienna and Hamburg. ~9–10 staff. Founder: Michael Asshauer.</span></div>
+        <div class="comp-row"><span class="k">Pricing</span><span class="v">Custom. No public range.</span></div>
+        <div class="comp-row"><span class="k">Proof</span><span class="v">200+ clients cited. Founder authority, own-marketing as proof.</span></div>
+        <div class="comp-take"><span class="lbl">▸ Most important card</span>The most direct positioning rival: founder-led, paid-plus-content, named method, DACH-native. Sharper narrative and a strong founder engine, but weighted to SaaS and consulting. Via Digital wins by leaning where xhauer is thin: industry, and visible data discipline.</div>
+      </div>
+
+      <div class="comp-card t1">
+        <div class="comp-tier">Hamburg · guarantee + volume</div>
+        <div class="comp-name">inno-one</div>
+        <div class="comp-url">inno-one.de</div>
+        <div class="comp-pos">"#1 LinkedIn Agentur" / outsourced revenue department. The ONE-Methode.</div>
+        <div class="comp-row"><span class="k">Scale</span><span class="v">Founded 2020 (formerly Innoway). Hamburg. 11–50 staff. 150+ clients.</span></div>
+        <div class="comp-row"><span class="k">Pricing</span><span class="v">Custom. No public range.</span></div>
+        <div class="comp-row"><span class="k">Proof</span><span class="v">Moderate-strong: client count and a pipeline guarantee; fewer marquee logos.</span></div>
+        <div class="comp-take"><span class="lbl">▸ Strategic take</span>Competes on risk reversal and volume. The guarantee is a real differentiator Via Digital does not match, so don't fight it there; counter with founder depth, data discipline and the industrial niche it doesn't own.</div>
+      </div>
+
+      <div class="comp-card t1">
+        <div class="comp-tier">Paid-media specialist · CAC-first</div>
+        <div class="comp-name">Native Digital</div>
+        <div class="comp-url">native-digital (site) · Germany</div>
+        <div class="comp-pos">Cross-channel paid-acquisition specialist that diagnoses acquisition vs. conversion.</div>
+        <div class="comp-row"><span class="k">Scale</span><span class="v">Founding date unknown. Germany.</span></div>
+        <div class="comp-row"><span class="k">Pricing</span><span class="v">Custom retainer. No public range.</span></div>
+        <div class="comp-row"><span class="k">Proof</span><span class="v">Cited as the paid-acquisition pick in market roundups. Named proof unknown.</span></div>
+        <div class="comp-take"><span class="lbl">▸ Strategic take</span>Sets the bar on diagnostic credibility. Its CAC-first, "show me the payback math" posture is persuasive, and something Via Digital could echo more explicitly in its own sales motion.</div>
+      </div>
+
+      <div class="comp-card t2">
+        <div class="comp-tier">Paid-media specialist · industrial overlap</div>
+        <div class="comp-name">GO2JUMP</div>
+        <div class="comp-url">go2jump (site) · Germany/DACH</div>
+        <div class="comp-pos">Certified Google, HubSpot, LinkedIn and Meta partner for B2B paid media.</div>
+        <div class="comp-row"><span class="k">Scale</span><span class="v">Founding date unknown. Germany/DACH.</span></div>
+        <div class="comp-row"><span class="k">Pricing</span><span class="v">Custom. Free audit entry.</span></div>
+        <div class="comp-row"><span class="k">Proof</span><span class="v">Case claims (e.g. +261% organic traffic in 6 months). Certified-partner badges.</span></div>
+        <div class="comp-take"><span class="lbl">▸ Strategic take</span>The clearest overlap on the industrial vertical, but broad rather than deep: industry is one of several verticals, not the focus. That leaves room for a sharper, LinkedIn-led industrial specialist.</div>
+      </div>
+
+      <div class="comp-card t2">
+        <div class="comp-tier">Content/SEO revenue engine</div>
+        <div class="comp-name">OMNIUS</div>
+        <div class="comp-url">omnius (site) · Germany/DACH</div>
+        <div class="comp-pos">B2B SEO and GEO "revenue engine" plus LinkedIn demand gen and CRM attribution.</div>
+        <div class="comp-row"><span class="k">Scale</span><span class="v">Founding date unknown. Germany/DACH.</span></div>
+        <div class="comp-row"><span class="k">Pricing</span><span class="v">Custom. No public range.</span></div>
+        <div class="comp-row"><span class="k">Proof</span><span class="v">Cited as the SEO/GEO pick in roundups. Named proof unknown.</span></div>
+        <div class="comp-take"><span class="lbl">▸ Strategic take</span>Owns the organic and content-attribution lane. Paid LinkedIn is secondary and slower to first results, which is Via Digital's strength, and vice versa. Complement, not a head-to-head.</div>
+      </div>
+
+      <div class="comp-card t3">
+        <div class="comp-tier">DACH market-entry</div>
+        <div class="comp-name">GROWSaaS</div>
+        <div class="comp-url">grow-saas.com · DACH</div>
+        <div class="comp-pos">Data-based performance marketing for SaaS, IT and Tech entering the DACH market.</div>
+        <div class="comp-row"><span class="k">Scale</span><span class="v">Founding date unknown. DACH focus, works worldwide.</span></div>
+        <div class="comp-row"><span class="k">Pricing</span><span class="v">Custom. No public range.</span></div>
+        <div class="comp-row"><span class="k">Proof</span><span class="v">Positioned as the DACH market-entry pick. Hard-metric proof limited.</span></div>
+        <div class="comp-take"><span class="lbl">▸ Strategic take</span>Strong on market-entry narrative and XING breadth, but a channel generalist. Breadth over depth leaves the pure-LinkedIn-specialist lane open.</div>
+      </div>
+
+      <div class="comp-card t3">
+        <div class="comp-tier">Multichannel lead gen · 17 yrs</div>
+        <div class="comp-name">INVICTUS</div>
+        <div class="comp-url">invictus-lead-generation.de</div>
+        <div class="comp-pos">B2B lead generation for the DACH market with GDPR and cultural nuance.</div>
+        <div class="comp-row"><span class="k">Scale</span><span class="v">Operating since 2007 (17+ yrs). Berlin, Brandenburg, Vienna. 100+ clients.</span></div>
+        <div class="comp-row"><span class="k">Pricing</span><span class="v">Custom; budgets planned separately. Free consult.</span></div>
+        <div class="comp-row"><span class="k">Proof</span><span class="v">17-year track record, 100+ clients. Marquee logos limited.</span></div>
+        <div class="comp-take"><span class="lbl">▸ Strategic take</span>The experience-and-trust play. Owns DACH GDPR nuance, but paid LinkedIn is diluted across a wide channel mix. Deep LinkedIn specialism is not its story.</div>
+      </div>
+
+      <div class="comp-card t3">
+        <div class="comp-tier">Organic LinkedIn · adjacent</div>
+        <div class="comp-name">Linkedist</div>
+        <div class="comp-url">linkedist (site)</div>
+        <div class="comp-pos">Organic LinkedIn audience growth for companies and executives, a demand feeder.</div>
+        <div class="comp-row"><span class="k">Scale</span><span class="v">Founding date unknown. TechBehemoths recognition (2025).</span></div>
+        <div class="comp-row"><span class="k">Pricing</span><span class="v">Custom. No public range.</span></div>
+        <div class="comp-row"><span class="k">Proof</span><span class="v">Reported 35,000+ new followers and 4.5M profile views for a client. Reach, not pipeline.</span></div>
+        <div class="comp-take"><span class="lbl">▸ Strategic take</span>Adjacent, not a paid competitor. Its reach-versus-pipeline gap underlines why buyers still need a paid specialist that measures revenue.</div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="sec" id="matrix">
+    <div class="sec-num">02 / At a glance</div>
+    <h2 class="sec-title">All ten, <span class="blue">side by side.</span></h2>
+    <p class="sec-intro">The full set on one grid, Via Digital highlighted as the reference row. Read the positioning and differentiator columns and watch the field collapse into sameness; read the lock-in column to see where switching costs, and therefore moats, are highest.</p>
+    <div class="matrix-wrap">
+      <table class="matrix">
+        <tr><th>Agency</th><th>Positioning</th><th>Primary audience</th><th>Pricing</th><th>Key differentiator</th><th>Proof</th><th>Lock-in</th></tr>
+        <tr class="ref"><td>Via Digital</td><td>Founder-led LinkedIn + Google specialist</td><td>DACH tech + industrial SME</td><td>Coaching €6.6k; retainer custom</td><td>Founder authority + transparent coaching</td><td>Moderate</td><td>Low</td></tr>
+        <tr><td>YOYABA</td><td>#1 Revenue Marketing EMEA</td><td>Funded / scaling SaaS</td><td>€5k–€22.5k+/mo</td><td>Scale + funded logos + method</td><td>Strong</td><td>High</td></tr>
+        <tr><td>xhauer</td><td>Performance-Content-Strategie</td><td>IT / SaaS / consulting</td><td>Custom</td><td>Named method + founder brand</td><td>Moderate</td><td>Med-High</td></tr>
+        <tr><td>inno-one</td><td>#1 LinkedIn, ONE-Methode</td><td>B2B, high volume (150+)</td><td>Custom</td><td>Guarantee + volume</td><td>Moderate</td><td>Medium</td></tr>
+        <tr><td>Native Digital</td><td>Paid-acquisition specialist</td><td>B2B SaaS, DACH</td><td>Custom</td><td>CAC-first diagnostic + CRO</td><td>Moderate</td><td>Medium</td></tr>
+        <tr><td>GO2JUMP</td><td>Multi-platform certified partner</td><td>Industrial, finance, edu, health</td><td>Custom (free audit)</td><td>4-platform breadth + audit</td><td>Moderate</td><td>Medium</td></tr>
+        <tr><td>OMNIUS</td><td>SEO/GEO revenue engine</td><td>B2B SaaS, long cycles</td><td>Custom</td><td>Content + attribution integration</td><td>Moderate</td><td>High</td></tr>
+        <tr><td>GROWSaaS</td><td>DACH market-entry, full-funnel</td><td>SaaS entering DACH</td><td>Custom</td><td>Market-entry + XING breadth</td><td>Weak-Mod</td><td>Medium</td></tr>
+        <tr><td>INVICTUS</td><td>Multichannel DACH lead gen</td><td>DACH incl. Mittelstand</td><td>Custom</td><td>17-yr longevity + GDPR nuance</td><td>Moderate</td><td>Medium</td></tr>
+        <tr><td>Linkedist</td><td>Organic LinkedIn growth</td><td>Audience-growth seekers</td><td>Custom</td><td>Organic reach feeder</td><td>Reach only</td><td>Low</td></tr>
+      </table>
+    </div>
+  </section>
+
+  <section class="sec" id="saturation">
+    <div class="sec-num">03 / The crowded ground</div>
+    <h2 class="sec-title">What <span class="terra">everyone</span> is saying.</h2>
+    <p class="sec-intro">These themes recur across the field. They are table stakes now: true, expected, and useless as a headline because buyers cannot use them to tell one agency from another. Via Digital's current instinct, to lead with "specialist, not full-service," walks straight into the most crowded corner.</p>
+    <table class="sat-table">
+      <tr><th>Saturated theme</th><th>Who says it</th><th>Typical language</th><th>Saturation</th></tr>
+      <tr><td class="theme">Specialist, not full-service</td><td>Via Digital, xhauer, Native Digital, inno-one</td><td>"Real specialists," "not a full-service agency"</td><td><span class="sat-pill">High</span></td></tr>
+      <tr><td class="theme">Lead gen + demand gen</td><td>xhauer, YOYABA, inno-one, OMNIUS</td><td>"Turn leads into real prospects and pipeline"</td><td><span class="sat-pill">High</span></td></tr>
+      <tr><td class="theme">Pipeline, not vanity metrics</td><td>YOYABA, OMNIUS, Native Digital, inno-one</td><td>"Closed-won revenue, not form fills"</td><td><span class="sat-pill">High</span></td></tr>
+      <tr><td class="theme">Named proprietary method</td><td>YOYABA, xhauer, inno-one, OMNIUS</td><td>"Revenue Marketing," "ONE-Methode," "revenue engine"</td><td><span class="sat-pill">High</span></td></tr>
+      <tr><td class="theme">DACH / GDPR-native</td><td>INVICTUS, GROWSaaS, xhauer, GO2JUMP</td><td>"Native German copy, local norms, GDPR"</td><td><span class="sat-pill med">Medium</span></td></tr>
+      <tr><td class="theme">We run our own ads too</td><td>Via Digital, xhauer</td><td>"We use this strategy for our own marketing"</td><td><span class="sat-pill med">Medium</span></td></tr>
+      <tr><td class="theme">Founder / thought-leader brand</td><td>Via Digital, xhauer, YOYABA</td><td>Personal-profile authority and speaking</td><td><span class="sat-pill med">Medium</span></td></tr>
+      <tr><td class="theme">Free audit / strategy call</td><td>Via Digital, GO2JUMP, INVICTUS</td><td>"Free initial audit / strategy call"</td><td><span class="sat-pill med">Medium</span></td></tr>
+    </table>
+    <p class="sec-intro" style="margin-top:20px">The lesson: "specialist," "lead plus demand gen," "pipeline not vanity," and a branded method are said by nearly everyone. They belong in the room as reassurance, never as the headline.</p>
+  </section>
+
+  <section class="sec" id="whitespace">
+    <div class="sec-num">04 / The open ground</div>
+    <h2 class="sec-title">What <em>nobody</em> is saying.</h2>
+    <p class="sec-intro">The gaps in the competitive conversation, scored by opportunity size. This is the most important section in the report. Two of the five are High, and both connect directly to what Via Digital can already prove.</p>
+    <div class="ws-grid">
+
+      <div class="ws-card">
+        <div class="ws-head"><span class="ws-no">White space 01</span><span class="ws-name">A proprietary <span class="em">data and tooling</span> layer</span><span class="ws-size">High</span></div>
+        <div class="ws-line"><span class="k">The gap</span><span class="v">Almost no one claims owned technology for day-parting, audience suppression, creative-fatigue prediction or revenue attribution. A few mention CAPI; none make tooling the story.</span></div>
+        <div class="ws-line"><span class="k">Why it matters</span><span class="v">Buyers increasingly ask how spend ties to revenue, and 30–50% tracking-consent loss in Germany makes it urgent. A visible data edge separates a specialist from a button-pusher.</span></div>
+        <div class="ws-line"><span class="k">Verdict</span><span class="v" style="color:var(--canopy)">The widest, most defensible opening, and the one DemandSense-grade tooling answers directly.</span></div>
+      </div>
+
+      <div class="ws-card">
+        <div class="ws-head"><span class="ws-no">White space 02</span><span class="ws-name">An explicit <span class="em">Austrian &amp; industrial</span> niche</span><span class="ws-size">High</span></div>
+        <div class="ws-line"><span class="k">The gap</span><span class="v">The field is dominated by German, SaaS-focused agencies. The industrial / Industrie and Austrian Mittelstand segment is under-claimed.</span></div>
+        <div class="ws-line"><span class="k">Why it matters</span><span class="v">Via Digital already carries KEBA, Agrana, Panasonic Industry and ABB. Industrial buyers have long, complex cycles that reward a specialist who speaks their language.</span></div>
+        <div class="ws-line"><span class="k">Verdict</span><span class="v" style="color:var(--canopy)">Credible and defensible today, with the logos already in hand. The German SaaS pack cannot easily follow.</span></div>
+      </div>
+
+      <div class="ws-card">
+        <div class="ws-head"><span class="ws-no">White space 03</span><span class="ws-name">Transparent, <span class="em">productized pricing</span></span><span class="ws-size">Med-High</span></div>
+        <div class="ws-line"><span class="k">The gap</span><span class="v">Nine of ten competitors are "custom / quote only." Public, packaged pricing is rare.</span></div>
+        <div class="ws-line"><span class="k">Why it matters</span><span class="v">Opaque pricing is a known B2B friction point. A transparent, productized entry lowers the barrier and signals confidence.</span></div>
+        <div class="ws-line"><span class="k">Verdict</span><span class="v" style="color:var(--canopy)">Via Digital already has a public €6,600 program. Extend the model, don't hide it.</span></div>
+      </div>
+
+      <div class="ws-card">
+        <div class="ws-head"><span class="ws-no">White space 04</span><span class="ws-name">Managed execution <span class="em">plus enablement</span></span><span class="ws-size">Med</span></div>
+        <div class="ws-line"><span class="k">The gap</span><span class="v">Agencies are either done-for-you retainers or pure content. Few combine managed campaigns with teaching the client to own the channel.</span></div>
+        <div class="ws-line"><span class="k">Why it matters</span><span class="v">Buyers fear lock-in and want in-house capability. A managed-plus-coaching hybrid answers both.</span></div>
+        <div class="ws-line"><span class="k">Verdict</span><span class="v" style="color:var(--canopy)">The coaching program is the proof point; pair it with managed service as one offer.</span></div>
+      </div>
+
+      <div class="ws-card">
+        <div class="ws-head"><span class="ws-no">White space 05</span><span class="ws-name">Profitable <span class="em">Mittelstand</span>, not just funded SaaS</span><span class="ws-size">Med</span></div>
+        <div class="ws-line"><span class="k">The gap</span><span class="v">Heavyweights chase venture-funded scale-ups. Sophisticated execution for profitable, non-VC firms is under-served.</span></div>
+        <div class="ws-line"><span class="k">Why it matters</span><span class="v">Most DACH B2B revenue sits in the Mittelstand, not in funded SaaS. A large, less-contested audience.</span></div>
+        <div class="ws-line"><span class="k">Verdict</span><span class="v" style="color:var(--canopy)">A natural companion to the industrial niche; same buyer, framed by ownership rather than funding.</span></div>
+      </div>
+
+      <div class="ws-card opening">
+        <div class="ws-head"><span class="ws-no" style="color:var(--blue)">The single clearest opening</span><span class="ws-name">Fuse three gaps into <span class="em">one story</span></span></div>
+        <div class="ws-line"><span class="k">The position</span><span class="v" style="color:var(--bone)">A data-disciplined, transparently priced LinkedIn and Google specialist built for DACH industrial and Mittelstand buyers. No competitor in the set occupies that exact intersection.</span></div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="sec" id="position">
+    <div class="sec-num">05 / The position</div>
+    <h2 class="sec-title">Built from the <em>white space.</em></h2>
+    <p class="sec-intro">Not from the current site, which leads with the saturated "specialist, not full-service" line. The direction below moves the lead onto open ground: the three ownable edges, not the four shared ones.</p>
+    <div class="sub-title plain">Dial <span class="terra">back</span> · Lean <em>in</em></div>
+    <div class="hooks-grid">
+      <div class="hook-col engaged">
+        <div class="hook-stage">Dial back — saturated</div>
+        <div class="hook-sub">These put Via Digital in a sea of sameness</div>
+        <div class="hook">"We are specialists, not a full-service agency" as the headline. Everyone says it.</div>
+        <div class="hook">"We run our own ads too" and generic "lead plus demand gen." Keep as proof, not the pitch.</div>
+        <div class="hook">A newly-coined methodology name. The field is crowded with them; authority travels further.</div>
+      </div>
+      <div class="hook-col aware">
+        <div class="hook-stage">Lean in — ownable</div>
+        <div class="hook-sub">True, rare, and provable today</div>
+        <div class="hook">Founder authority: certified, published (Springer 2025), OMX stage. Few rivals match the depth.</div>
+        <div class="hook">Industrial and Austrian credibility: KEBA, Agrana, Panasonic Industry, ABB.</div>
+        <div class="hook">Visible data discipline and transparent, productized pricing in a market of "custom quote."</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="sec-num">06 / Uniquely solvable</div>
+    <h2 class="sec-title">The pains Via Digital is <em>built</em> for.</h2>
+    <p class="sec-intro">Each maps to a white space, and each is something the field leaves open.</p>
+    <table class="pain-table">
+      <tr><th>Buyer pain</th><th>Why the field leaves it open</th><th>Via Digital's angle</th></tr>
+      <tr><td class="quote">"I cannot tell these agencies apart."</td><td>Uniform messaging makes selection hard; everyone sounds the same.</td><td class="win">A sharply niched, transparent position resolves it.</td></tr>
+      <tr><td class="quote">"We are wasting LinkedIn spend on fatigued creative."</td><td>Few show an owned method for suppression, day-parting or fatigue.</td><td class="win">Data discipline: CAPI, suppression, day-level optimization, made visible.</td></tr>
+      <tr><td class="quote">"I don't trust the reported results."</td><td>30–50% tracking-consent loss in Germany; most rivals stay quiet on mechanics.</td><td class="win">Visible CAPI and revenue attribution answer the doubt.</td></tr>
+      <tr><td class="quote">"I'm afraid of being locked into a retainer forever."</td><td>Opaque, open-ended retainers create dependency.</td><td class="win">Managed-plus-coaching lets clients build the capability in-house.</td></tr>
+      <tr><td class="quote">"Nobody speaks to industrial buyers like us."</td><td>SaaS-obsessed heavyweights overlook long-cycle industrial firms.</td><td class="win">Already has the logos and the language for Industrie and Mittelstand.</td></tr>
+    </table>
+  </section>
+
+  <section class="sec" id="targeting">
+    <div class="sec-num">07 / Where to aim</div>
+    <h2 class="sec-title">Lead with the <em>industrial</em> seam.</h2>
+    <p class="sec-intro">The audience where the UVP and the pains align hardest, and exactly what the <a class="kb" onclick="showView('worksheet')" style="cursor:pointer">audience worksheet</a> operationalizes.</p>
+    <div class="target-grid">
+      <div class="tcol">
+        <div class="tcol-h">Primary</div>
+        <ul>
+          <li>DACH industrial / Fertigung and B2B tech firms with CLV &gt; €10k and long, complex sales cycles.</li>
+          <li>Marketing leaders who want execution and the ability to bring the channel in-house.</li>
+          <li>Austrian Mittelstand where local presence and language are a genuine edge.</li>
+        </ul>
+      </div>
+      <div class="tcol sec2">
+        <div class="tcol-h">Secondary</div>
+        <ul>
+          <li>DACH scale-ups seeking a transparent, senior alternative to heavyweight retainers.</li>
+          <li>In-house teams wanting to own LinkedIn Ads via structured coaching.</li>
+        </ul>
+      </div>
+      <div class="tcol low">
+        <div class="tcol-h">De-prioritize</div>
+        <ul>
+          <li>Sub-€3–5k/month budgets and B2C. Below the threshold where specialist execution pays off.</li>
+          <li>Venture-funded hyper-growth chasing pure volume. That is YOYABA's turf.</li>
+          <li>Organic-only mandates with no paid or attribution need. That is Linkedist's lane.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="sec-num">08 / Campaign language</div>
+    <h2 class="sec-title">Message <em>hooks</em> by stage.</h2>
+    <p class="sec-intro">Campaign-ready phrasing mapped to the white space. The seed library for ads, landing pages, and founder content.</p>
+    <div class="hooks-grid">
+      <div class="hook-col">
+        <div class="hook-stage">Unaware</div>
+        <div class="hook-sub">Reframe the problem</div>
+        <div class="hook">"Your LinkedIn leads are not your pipeline."</div>
+        <div class="hook">"In Germany, up to half your ad-influenced buyers never appear in your dashboard."</div>
+        <div class="hook">"Industrial buyers do not fill out demo forms. They research for months."</div>
+      </div>
+      <div class="hook-col aware">
+        <div class="hook-stage">Aware</div>
+        <div class="hook-sub">Differentiate the approach</div>
+        <div class="hook">"Specialist execution, without the black box."</div>
+        <div class="hook">"Own your LinkedIn engine. Do not rent it forever."</div>
+        <div class="hook">"Built for Industrie and Mittelstand, not just funded SaaS."</div>
+      </div>
+      <div class="hook-col engaged">
+        <div class="hook-stage">Engaged</div>
+        <div class="hook-sub">Convert</div>
+        <div class="hook">"Transparent, productized pricing. See it before you commit."</div>
+        <div class="hook">"A founder-certified team, not a rotating junior account manager."</div>
+        <div class="hook">"Day-level optimization and clean attribution, proven with named DACH cases."</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="takeaways">
+    <div class="sec-num">09 / The bottom line</div>
+    <h2 class="sec-title">Seven things to <em>act on.</em></h2>
+    <div class="take-list">
+      <div class="take"><div class="take-n">01</div><div class="take-body">The field sounds identical. <strong>"Specialist, not full-service," "lead plus demand gen" and branded methods are table stakes</strong> across all ten. None of them differentiate.</div></div>
+      <div class="take hot"><div class="take-n">02</div><div class="take-body"><strong>The biggest white space is a visible data and tooling edge.</strong> Almost no one claims owned technology for suppression, day-parting, fatigue or revenue attribution, precisely as German tracking loss makes it urgent.</div></div>
+      <div class="take hot"><div class="take-n">03</div><div class="take-body"><strong>Industrial and Austrian is under-owned.</strong> The pack chases German SaaS. KEBA, Agrana, Panasonic and ABB make this niche credible and defensible.</div></div>
+      <div class="take"><div class="take-n">04</div><div class="take-body"><strong>Transparent pricing is a wedge.</strong> Nine of ten are "custom quote." A public, productized offer signals confidence and lowers friction.</div></div>
+      <div class="take hot"><div class="take-n">05</div><div class="take-body"><strong>The sharpest UVP fuses three gaps:</strong> a data-disciplined, transparently priced LinkedIn and Google specialist for DACH industrial and Mittelstand buyers. No competitor sits at that intersection.</div></div>
+      <div class="take warn"><div class="take-n">06</div><div class="take-body"><strong>Most vulnerable rivals.</strong> Broad players (GO2JUMP, GROWSaaS, INVICTUS) lack LinkedIn depth; content-led OMNIUS is slow on paid; Linkedist offers reach, not pipeline. Each leaves the specialist lane open.</div></div>
+      <div class="take hot"><div class="take-n">07</div><div class="take-body"><strong>The one move:</strong> re-lead every asset with the industrial / Mittelstand niche plus visible data discipline and transparent pricing. Keep the table-stakes claims as support, not the headline.</div></div>
+    </div>
+
+    <div class="next">
+      <div class="next-label">/// from the map to the motion</div>
+      <div class="next-h">The intel names the position. Now <em>reach it.</em></div>
+      <p class="next-body">This analysis names where to stand. The audience worksheet translates the white space into concrete LinkedIn audiences, third-party signal targets, and search keyword themes, so the plan knows exactly who to reach and how. The Roadmap turns that into a build. Create. Connect. Capture.</p>
+      <div class="hero-cta" style="margin-top:0">
+        <button class="btn btn-primary" onclick="showView('worksheet')">Open the audience worksheet →</button>
+        <button class="btn btn-blue" onclick="showView('roadmap')">View the roadmap →</button>
+      </div>
+    </div>
+  </section>
+
+  <footer class="foot">
+    <div class="foot-line">Prepared by Impactable · Competitive White Space · Via Digital · July 2026 · impactable.com</div>
+  </footer>
+
+</div>
+</div>
+<div class="view" id="view-worksheet">
+<div class="wrap">
+
+  <div class="wsbar">
+    <a class="back" onclick="showView('overview')">‹ Back to the room</a>
+    <div class="sp">
+      <button class="btn btn-ghost" onclick="showView('competitor')" style="padding:12px 18px;font-size:11px">‹ Competitor intel</button>
+      <button class="btn btn-primary" onclick="showView('roadmap')" style="padding:12px 18px;font-size:11px">Roadmap →</button>
+    </div>
+  </div>
+
+  <section class="hero" style="padding-top:40px">
+    <span class="tag">Audience architecture · prepared for Via Digital</span>
+    <h1>Who to <span class="canopy">reach.</span><br>And <span class="blue">in what order.</span></h1>
+    <p class="hero-sub">The white space named the position: <strong>a data-disciplined, transparently priced specialist for DACH industrial and Mittelstand buyers.</strong> This worksheet turns that into a build-ready audience plan across three layers, LinkedIn native targeting, third-party signal overlays, and paid search, all sequenced by Impactable's audience efficiency ladder. The throughline is one buyer: <strong>the DACH industrial and tech marketing leader with a long, complex cycle.</strong></p>
+    <div class="hero-meta">
+      <span>Channels <strong>LinkedIn · Signals · Google</strong></span>
+      <span>Anchor <strong>the industrial-Mittelstand seam</strong></span>
+      <span>Start mode <strong>warm-first (founder engine)</strong></span>
+      <span>Date <strong>July 1, 2026</strong></span>
+    </div>
+  </section>
+
+  <section class="sec" id="ws-ladder">
+    <div class="sec-num">00 / The operating principle</div>
+    <h2 class="sec-title">Spend warm <span class="blue">before</span> you spend <em>cold.</em></h2>
+    <p class="sec-intro">Every dollar is allocated by intent. The closer an audience is to already knowing Via Digital, the cheaper and higher-converting it is, a pattern Impactable has measured across <a class="kb" href="https://impactable.com/linkedin-ads-funnel-benchmarks/" target="_blank" rel="noopener">200+ B2B SaaS ad accounts</a>. Via Digital has a real advantage most rivals don't: a founder-led organic engine (Theresa's content, coaching, webinars, newsletter) that continuously feeds warm pools. So warm gets funded first, ABM next, and a single cold persona last. <strong style="color:var(--bone)">Click each rung</strong> to see the benchmark and the role it plays.</p>
+    <div class="ladder">
+      <div class="rung r1 active" data-rung="1"><div class="rung-n">Rung 01 · cheapest</div><div class="rung-h">CRM &amp; warm lists</div><div class="rung-cpl">$75–$150 CPL</div><div class="rung-d">Coaching alumni, webinar, newsletter, CRM uploads.</div></div>
+      <div class="rung-arrow">›</div>
+      <div class="rung r2" data-rung="2"><div class="rung-n">Rung 02</div><div class="rung-h">Site &amp; engagers</div><div class="rung-cpl">$120–$250 CPL</div><div class="rung-d">Insight Tag visitors, ad/video engagers, Theresa's content.</div></div>
+      <div class="rung-arrow">›</div>
+      <div class="rung r3" data-rung="3"><div class="rung-n">Rung 03</div><div class="rung-h">ABM accounts</div><div class="rung-cpl">$250–$400 CPL</div><div class="rung-d">Named, signal-scored industrial &amp; tech accounts.</div></div>
+      <div class="rung-arrow">›</div>
+      <div class="rung r4" data-rung="4"><div class="rung-n">Rung 04 · priciest</div><div class="rung-h">Selective cold</div><div class="rung-cpl">$300–$600+ CPL</div><div class="rung-d">One ICP persona at a time.</div></div>
+    </div>
+    <div class="ladder-detail" id="ladderDetail"></div>
+    <p class="bench-src">CPL ranges are Impactable's published efficiency-ladder benchmarks (USD, directional) from 200+ B2B SaaS accounts. Source: <a href="https://impactable.com/linkedin-ads-funnel-benchmarks/" target="_blank" rel="noopener">The LinkedIn Ads Funnel That Actually Scales</a>. Via Digital's DACH actuals will land inside these bands as data accrues.</p>
+  </section>
+
+  <section class="sec" id="ws-linkedin">
+    <div class="sec-num">01 / Channel one</div>
+    <h2 class="sec-title">LinkedIn native <em>architecture.</em></h2>
+    <p class="sec-intro">LinkedIn is the qualification and nurture engine, the only platform that filters a warm audience down to the exact ICP by title, seniority and function. Built in three tiers. <strong style="color:var(--bone)">Always disable Audience Expansion.</strong> Always exclude existing clients, the nine competitor agencies, and non-ICP roles.</p>
+
+    <div class="sub-title"><span class="tierbadge tb-warm">Tier 1</span> Warm retargeting <span style="font-family:'Fraunces',serif;font-style:italic;font-size:16px;color:var(--canopy);text-transform:none;letter-spacing:0">highest priority</span></div>
+    <p class="sub-note">Via Digital's edge. The founder-led organic engine already produces warm inventory most competitors don't have. Stand the Insight Tag up on day one, start each pool broad, then layer ICP filters once it has size. Keep the retargeting window to 90 days for saturation.</p>
+    <div class="aud-grid">
+      <div class="aud-card">
+        <div class="aud-kicker">Warm 01 · highest intent</div>
+        <div class="aud-name">CRM, coaching alumni &amp; webinar lists</div>
+        <div class="aud-rows">
+          <div class="aud-row"><span class="k">Source</span><span class="v">Matched Audiences: CRM, €6,600 coaching alumni, webinar &amp; newsletter registrants</span></div>
+          <div class="aud-row"><span class="k">ICP filter</span><span class="v"><span class="mono-tag">Function: Marketing/BD</span><span class="mono-tag">Seniority: Mgr+</span> post-upload</span></div>
+          <div class="aud-row"><span class="k">Match note</span><span class="v">Filter to active LinkedIn users; small lists need frequency caps</span></div>
+          <div class="aud-row"><span class="k">Size</span><span class="v aud-size">Confirm at build</span></div>
+        </div>
+        <div class="aud-why"><span class="lbl">▸ Why</span>The highest-intent list assets already owned. Coaching alumni and webinar registrants are pre-qualified and brand-aware.</div>
+      </div>
+      <div class="aud-card">
+        <div class="aud-kicker">Warm 02 · the founder engine</div>
+        <div class="aud-name">Founder-content &amp; ad engagers</div>
+        <div class="aud-rows">
+          <div class="aud-row"><span class="k">Source</span><span class="v">Theresa's post &amp; Thought-Leader-Ad engagers (~4,800 followers), plus ad/video viewers 25–50%+</span></div>
+          <div class="aud-row"><span class="k">ICP filter</span><span class="v"><span class="mono-tag">Seniority: Mgr+</span><span class="mono-tag">Industry: ICP set</span></span></div>
+          <div class="aud-row"><span class="k">Window</span><span class="v">90 days</span></div>
+          <div class="aud-row"><span class="k">Size</span><span class="v aud-size">Grows continuously</span></div>
+        </div>
+        <div class="aud-why"><span class="lbl">▸ Why</span>The warm pool most rivals cannot replicate. Wire every engager with Theresa's content straight into Tier 1.</div>
+      </div>
+      <div class="aud-card">
+        <div class="aud-kicker">Warm 03 · build now</div>
+        <div class="aud-name">Website visitors (Insight Tag)</div>
+        <div class="aud-rows">
+          <div class="aud-row"><span class="k">Source</span><span class="v">LinkedIn Insight Tag (install day one)</span></div>
+          <div class="aud-row"><span class="k">ICP filter</span><span class="v"><span class="mono-tag">Seniority: Mgr+</span><span class="mono-tag">Function: Marketing</span></span></div>
+          <div class="aud-row"><span class="k">Window</span><span class="v">90 / 180 days</span></div>
+          <div class="aud-row"><span class="k">Size</span><span class="v aud-size">Builds with spend</span></div>
+        </div>
+        <div class="aud-why"><span class="lbl">▸ Why</span>Pair with DemandSense WebID to name the companies behind the visits and feed the ABM list.</div>
+      </div>
+    </div>
+
+    <div class="sub-title"><span class="tierbadge tb-abm">Tier 2</span> ABM target accounts</div>
+    <p class="sub-note">Named, signal-scored accounts filtered to the buying committee. Build the list in Clay from the signals in Channel Two, then upload as a Matched Audience and layer person-level filters. ABM pools filter down fast, so frequency-cap and sequence.</p>
+    <div class="aud-grid">
+      <div class="aud-card abm">
+        <div class="aud-kicker">ABM · primary</div>
+        <div class="aud-name">Industrial &amp; tech target accounts</div>
+        <div class="aud-rows">
+          <div class="aud-row"><span class="k">List source</span><span class="v">Clay-built: ICP firmographics + technographic/hiring/intent signals (Ch. 2)</span></div>
+          <div class="aud-row"><span class="k">Person filter</span><span class="v"><span class="mono-tag">Head of Marketing</span><span class="mono-tag">Demand Gen</span><span class="mono-tag">Marketing Mgr</span></span></div>
+          <div class="aud-row"><span class="k">Seniority</span><span class="v"><span class="mono-tag">Manager</span><span class="mono-tag">Director</span><span class="mono-tag">CXO/GF</span></span></div>
+          <div class="aud-row"><span class="k">Size</span><span class="v aud-size">~1,500 active (tiered P1/P2)</span></div>
+        </div>
+        <div class="aud-why"><span class="lbl">▸ Why</span>Cover the researcher and the signer. The person who converts is rarely the person who signs.</div>
+      </div>
+      <div class="aud-card abm">
+        <div class="aud-kicker">ABM · the edge</div>
+        <div class="aud-name">DemandSense WebID visitors</div>
+        <div class="aud-rows">
+          <div class="aud-row"><span class="k">Source</span><span class="v">Deanonymized site visitors → companies → synced to a Matched Audience</span></div>
+          <div class="aud-row"><span class="k">Hygiene</span><span class="v">Down-vote off-ICP companies → weekly self-cleaning exclusion list</span></div>
+          <div class="aud-row"><span class="k">Attribution</span><span class="v">HubSpot revenue-influence tie-back</span></div>
+          <div class="aud-row"><span class="k">Size</span><span class="v aud-size">Always-on, in-market</span></div>
+        </div>
+        <div class="aud-why"><span class="lbl">▸ Why</span>Turns anonymous traffic into an always-on retargeting pool of accounts already researching. The visible data edge the white space calls for.</div>
+      </div>
+    </div>
+
+    <div class="sub-title"><span class="tierbadge tb-cold">Tier 3</span> Selective cold <span style="font-family:'Fraunces',serif;font-style:italic;font-size:16px;color:var(--terracotta);text-transform:none;letter-spacing:0">one at a time</span></div>
+    <p class="sub-note">Run one cold persona at a time so the budget can saturate the audience. Persona 1 first; add Persona 2 once its warm pool is established. A third persona, in-house marketers for the coaching ladder, runs on its own track with different creative. Cold is awareness fuel, not the closer.</p>
+    <div class="aud-grid">
+      <div class="aud-card cold">
+        <div class="aud-kicker">Cold persona 01 · lead</div>
+        <div class="aud-name">DACH SaaS / IT marketing leaders</div>
+        <div class="aud-rows">
+          <div class="aud-row"><span class="k">Titles</span><span class="v"><span class="mono-tag">Head of Marketing</span><span class="mono-tag">Demand Gen</span><span class="mono-tag">Growth Marketing</span></span></div>
+          <div class="aud-row"><span class="k">Seniority</span><span class="v"><span class="mono-tag">Manager</span><span class="mono-tag">Director</span><span class="mono-tag">CXO</span></span></div>
+          <div class="aud-row"><span class="k">Industry</span><span class="v"><span class="mono-tag">Software</span><span class="mono-tag">IT Services</span><span class="mono-tag">Technology</span></span></div>
+          <div class="aud-row"><span class="k">Company size</span><span class="v"><span class="mono-tag">51–1,000</span></span></div>
+          <div class="aud-row"><span class="k">Geo</span><span class="v"><span class="mono-tag">AT · DE · CH</span></span></div>
+          <div class="aud-row"><span class="k">Est. size</span><span class="v aud-size">~45–70K (tune at build)</span></div>
+        </div>
+        <div class="aud-why"><span class="lbl">▸ White space link</span>The core ICP. Lead creative: the attribution and data-discipline story nobody else tells. (WS 1)</div>
+      </div>
+      <div class="aud-card cold">
+        <div class="aud-kicker">Cold persona 02 · phase two</div>
+        <div class="aud-name">DACH industrial / Fertigung leaders</div>
+        <div class="aud-rows">
+          <div class="aud-row"><span class="k">Titles</span><span class="v"><span class="mono-tag">Marketing Manager</span><span class="mono-tag">Head of Marketing</span><span class="mono-tag">Digital Marketing</span></span></div>
+          <div class="aud-row"><span class="k">Seniority</span><span class="v"><span class="mono-tag">Manager</span><span class="mono-tag">Director</span><span class="mono-tag">CXO</span></span></div>
+          <div class="aud-row"><span class="k">Industry</span><span class="v"><span class="mono-tag">Machinery</span><span class="mono-tag">Industrial Automation</span><span class="mono-tag">Manufacturing</span></span></div>
+          <div class="aud-row"><span class="k">Company size</span><span class="v"><span class="mono-tag">201–5,000</span></span></div>
+          <div class="aud-row"><span class="k">Geo</span><span class="v"><span class="mono-tag">AT (priority) · DE · CH</span></span></div>
+          <div class="aud-row"><span class="k">Est. size</span><span class="v aud-size">~30–50K (tune at build)</span></div>
+        </div>
+        <div class="aud-why"><span class="lbl">▸ White space link</span>The under-owned niche. KEBA, Agrana, Panasonic Industry and ABB prove the language. (WS 2)</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="ws-signals">
+    <div class="sec-num">02 / Channel two</div>
+    <h2 class="sec-title">Third-party <em>signal</em> overlays.</h2>
+    <p class="sec-intro" style="margin-bottom:0">Native filters describe who someone <em>is</em>. Signals reveal what a company is <em>doing right now</em>, the difference between a fit list and an in-market list. These are the inputs to the Clay-built ABM list. Pick the top two or three, score accounts against them, then upload as a Matched Audience. Method: <a class="kb" href="https://impactable.com/the-power-of-third-party-custom-audiences/" target="_blank" rel="noopener">The Power of Third-Party Custom Audiences</a>.</p>
+    <table class="sig-table">
+      <tr><th>Signal</th><th>What it indicates</th><th>Why it matters for Via Digital</th><th>Source</th></tr>
+      <tr><td class="sig">Website-visitor ID (the edge)</td><td>Which companies are researching Via Digital right now, deanonymized to company and profile</td><td>Always-on in-market retargeting pool; down-voting builds a self-cleaning weekly exclusion list</td><td>DemandSense WebID → Matched Audience</td></tr>
+      <tr><td class="sig">Technographic (tech install)</td><td>HubSpot, Salesforce, Marketo, plus industrial ERP/PLM stacks</td><td>A machinery firm already on HubSpot is a far warmer target; sharpens the list dramatically</td><td>BuiltWith, HG Insights, Clay</td></tr>
+      <tr><td class="sig">Hiring — marketing roles</td><td>Open roles for Demand Gen, Performance Marketing, or "LinkedIn Ads"</td><td>Active investment in the problem Via Digital solves; hire = done-for-you, build = coaching</td><td>LinkedIn Jobs, Clay triggers</td></tr>
+      <tr><td class="sig">Funding — recent raise</td><td>Series A/B among DACH SaaS and scale-ups</td><td>Fresh budget and growth pressure; time outreach to the weeks after the raise</td><td>Crunchbase, Dealroom, Clay</td></tr>
+      <tr><td class="sig">Intent surges</td><td>Spikes on "LinkedIn advertising," "demand generation," "attribution"</td><td>The buying committee is actively researching; prioritize for ABM, lead with attribution</td><td>Bombora, G2 intent, 6sense</td></tr>
+      <tr><td class="sig">Event / webinar concentration</td><td>OMX, DMEXCO and LinkedIn-event attendees and engagers</td><td>Theresa speaks at OMX; her session engagers convert into warm follow-up and ABM seeds</td><td>Event lists, LinkedIn Events, Sales Nav</td></tr>
+      <tr><td class="sig">Pain / trigger events</td><td>New CMO hire, agency-of-record change, DACH market expansion</td><td>New marketing leaders re-evaluate agencies in their first 90 days</td><td>Job-change alerts, Clay, news</td></tr>
+      <tr><td class="sig">Maturity / platform migration</td><td>New marketing-automation adoption or HubSpot migration</td><td>Plumbing but no paid engine; a natural moment to sell managed execution plus enablement</td><td>Technographic change tracking</td></tr>
+    </table>
+    <div class="workflow">
+      <div class="workflow-h">Enrichment workflow</div>
+      <p class="budget-note" style="opacity:0.85">Do not pick one signal. Stack the strongest two or three into one scored list, then activate it as a precise Matched Audience. This is the audience competitors cannot copy from a filter panel: it is built, not rented.</p>
+      <div class="workflow-steps">
+        <span class="wstep"><span class="n">1</span> Pull ICP firmographic base</span><span class="arr">›</span>
+        <span class="wstep"><span class="n">2</span> Score in Clay on the top signals</span><span class="arr">›</span>
+        <span class="wstep"><span class="n">3</span> Enrich the buying committee</span><span class="arr">›</span>
+        <span class="wstep"><span class="n">4</span> Upload to LinkedIn as Matched Audience</span><span class="arr">›</span>
+        <span class="wstep"><span class="n">5</span> Feed WebID visitors in continuously</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="ws-search">
+    <div class="sec-num">03 / Channel three</div>
+    <h2 class="sec-title">Paid search <em>capture.</em></h2>
+    <p class="sec-intro" style="margin-bottom:0">Google captures demand that already exists. Fund the top of the intent pyramid, where volume is smallest and intent highest, and let every click feed the LinkedIn engine as a retargetable warm visitor. Competitor conquest runs in its own exact-match campaign with its own budget.</p>
+    <table class="kw-table" style="margin-top:18px">
+      <tr><th>Keyword theme</th><th>Intent</th><th>Buyer signal</th><th>Tactical note</th></tr>
+      <tr><td class="kw">"LinkedIn Ads Agentur" / "B2B LinkedIn Ads Agentur"</td><td><span class="intent-pill i-high">High</span></td><td>Core category, solution-aware</td><td>Non-negotiable to appear here. Exact + Phrase.</td></tr>
+      <tr><td class="kw">"LinkedIn Ads Betreuung / Management"</td><td><span class="intent-pill i-high">High</span></td><td>Wants managed execution</td><td>High-conviction landing page on the specialist story.</td></tr>
+      <tr><td class="kw">"[YOYABA/xhauer/inno-one] Alternative" + competitor brands</td><td><span class="intent-pill i-high">High</span></td><td>Comparison shopping, in motion</td><td>Competitor conquest. Own campaign, exact match, separate budget.</td></tr>
+      <tr><td class="kw">"Performance Marketing Agentur B2B" / "Leadgenerierung B2B LinkedIn"</td><td><span class="intent-pill i-high">High</span></td><td>Adjacent high intent</td><td>Slightly broader; still solution-aware.</td></tr>
+      <tr><td class="kw">"Via Digital" (brand defense)</td><td><span class="intent-pill i-high">High</span></td><td>Already aware, navigating</td><td>Cheap, essential. Keep competitors off your own name.</td></tr>
+      <tr><td class="kw">"LinkedIn Ads Kosten / CPL" / "LinkedIn Ads Agentur Kosten"</td><td><span class="intent-pill i-med">Medium</span></td><td>Price-checking, problem-aware</td><td>Capture, then retarget on LinkedIn with proof + attribution angle.</td></tr>
+      <tr><td class="kw">"wie funktioniert LinkedIn Ads B2B" / "LinkedIn Ads Strategie"</td><td><span class="intent-pill i-med">Medium</span></td><td>Earlier-stage research</td><td>Route to a guide, tag the visitor, nurture via retargeting.</td></tr>
+      <tr><td class="kw">"was ist Demand Generation" / "B2B Marketing Trends"</td><td><span class="intent-pill i-low">Low</span></td><td>Education, early research</td><td>Content-only. Do NOT fund for conversion; feed retargeting.</td></tr>
+    </table>
+
+    <div class="rec">
+      <div class="rec-label">/// google: where to start</div>
+      <div class="rec-h">Fund the <em>top of the pyramid</em> first.</div>
+      <ol>
+        <li><strong>Start with 5–6 keywords:</strong> "LinkedIn Ads Agentur" (Exact + Phrase), "B2B LinkedIn Ads Agentur," "LinkedIn Ads Betreuung / Management," brand defense, and one competitor-conquest campaign.</li>
+        <li><strong>Run conquest in its own exact-match campaign</strong> with a separate budget so it never competes with core terms for spend.</li>
+        <li><strong>Point every high-intent ad at a conviction landing page</strong> built on the data-discipline + transparent-pricing message, not the generic homepage. Every click feeds Tier 1.</li>
+      </ol>
+    </div>
+
+    <div class="neg">
+      <div class="neg-h">Negative keywords (mandatory)</div>
+      <div class="neg-row"><span class="k">Job seekers</span><span class="v"><span class="ng">jobs, Stelle, Gehalt, Ausbildung, Praktikum, career</span></span></div>
+      <div class="neg-row"><span class="k">Freebie hunters</span><span class="v"><span class="ng">kostenlos, free, template, Vorlage, gratis</span></span></div>
+      <div class="neg-row"><span class="k">DIY / education</span><span class="v"><span class="ng">tutorial, Kurs, lernen, "selber machen"</span> — negative for done-for-you, but see the coaching note</span></div>
+      <div class="neg-row"><span class="k">B2C / platforms</span><span class="v"><span class="ng">Instagram, TikTok, Privat, B2C</span></span></div>
+      <div class="neg-row"><span class="k">Navigational</span><span class="v"><span class="ng">login, support, download, Erfahrungen</span> (route to brand)</span></div>
+      <div class="neg-row"><span class="k">Coaching split</span><span class="v" style="color:var(--canopy)">The DIY cluster is a <em>positive</em> keyword set for a separate coaching campaign. Split it so the €6,600 program captures the searchers the retainer excludes.</span></div>
+    </div>
+  </section>
+
+  <section class="sec" id="ws-budget">
+    <div class="sec-num">04 / Budget framework</div>
+    <h2 class="sec-title">The split follows the <em>warm inventory.</em></h2>
+    <p class="sec-intro">Because Via Digital's founder engine already produces warm inventory, the default is a warm-led split: fund the cheapest, highest-converting pools first. From a true cold start (a brand-new offer or vertical) warm still builds fastest, so it stays over-weighted early while ABM and cold manufacture the pool. <strong style="color:var(--bone)">Toggle to compare.</strong></p>
+    <div class="budget">
+      <div class="budget-top">
+        <div class="budget-label">/// budget allocation · by start mode</div>
+        <div class="budget-toggle">
+          <button class="bt-btn active" data-budget="warm">Warm start (default)</button>
+          <button class="bt-btn" data-budget="cold">Cold start</button>
+        </div>
+      </div>
+      <div class="budget-bar">
+        <div class="b-warm" id="bWarm" style="flex:60">60% · Warm</div>
+        <div class="b-abm" id="bAbm" style="flex:25">25% · ABM</div>
+        <div class="b-cold" id="bCold" style="flex:15">15% · Cold</div>
+      </div>
+      <p class="budget-note" id="budgetNote"><strong>Warm start (default):</strong> 60 / 25 / 15. Via Digital already has warm inventory from the founder engine, so the efficient warm tier carries the conversion load while ABM sustains pipeline and one cold persona tops up the funnel.</p>
+      <div class="budget-cap">
+        <b>Budget not yet confirmed.</b> Under ~€3k/mo, collapse to a single channel and a single cold persona, do not split. Final tier splits set once monthly spend is confirmed.
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="ws-start">
+    <div class="sec-num">05 / The build order</div>
+    <h2 class="sec-title">Instrument. <em>Warm up.</em> Then scale.</h2>
+    <p class="sec-intro">Stand the audiences up in efficiency order. Each step feeds the next: search and cold create traffic, traffic and signals build warm pools, warm pools carry the cheapest conversions. <strong style="color:var(--bone)">Click a phase</strong> to expand it.</p>
+    <div class="timeline">
+      <div class="tl-step active" data-step="1"><div class="tl-when">Week 1</div><div class="tl-h">Instrument first</div></div>
+      <div class="tl-step" data-step="2"><div class="tl-when">Weeks 1–2</div><div class="tl-h">Warm retargeting on</div></div>
+      <div class="tl-step" data-step="3"><div class="tl-when">Weeks 2–3</div><div class="tl-h">Paid search + brand</div></div>
+      <div class="tl-step" data-step="4"><div class="tl-when">Weeks 3–4</div><div class="tl-h">Build the ABM list</div></div>
+      <div class="tl-step" data-step="5"><div class="tl-when">Weeks 4–12</div><div class="tl-h">Cold + tune from signals</div></div>
+    </div>
+    <div class="tl-detail" id="tlDetail"></div>
+  </section>
+
+  <section class="sec" id="ws-next">
+    <div class="sec-num">06 / What comes next</div>
+    <h2 class="sec-title">Audiences are set. Now the <em>message.</em></h2>
+    <p class="sec-intro">This worksheet answers <strong style="color:var(--bone)">who</strong> and <strong style="color:var(--bone)">in what order.</strong> The Roadmap answers what happens next: the one-time strategy build that turns the white space and this plan into an operating playbook, and the two ways to go deeper with Impactable.</p>
+    <div class="next">
+      <div class="next-label">/// recommended next step</div>
+      <div class="next-h">Turn this plan into a <em>build.</em></div>
+      <p class="next-body">Message and offer architecture per persona, the channel and budget plan, and a build-ready roadmap. That is the strategy build on the Roadmap tab. Create. Connect. Capture.</p>
+      <div class="hero-cta" style="margin-top:0">
+        <button class="btn btn-primary" onclick="showView('roadmap')">View the roadmap →</button>
+        <a class="btn btn-blue" href="https://landbot.online/v3/H-2201417-SPMOARYH76NAHLP2/index.html" target="_blank" rel="noopener">Book a call →</a>
+        <button class="btn btn-ghost" onclick="showView('overview')">Back to the room →</button>
+      </div>
+    </div>
+  </section>
+
+  <footer class="foot">
+    <div class="foot-line">Prepared by Impactable · LinkedIn Marketing Partner · Targeting Worksheet · Via Digital · July 2026 · impactable.com</div>
+  </footer>
+
+</div>
+</div>
+<div class="view" id="view-roadmap">
+<div class="wrap">
+
+  <div class="wsbar">
+    <a class="back" onclick="showView('overview')">‹ Back to the room</a>
+    <div class="sp">
+      <a class="btn btn-ghost" href="https://impactable.marketing/pricing.html" target="_blank" rel="noopener" style="padding:12px 18px;font-size:11px">Full pricing ↗</a>
+      <a class="btn btn-primary" href="https://landbot.online/v3/H-2201417-SPMOARYH76NAHLP2/index.html" target="_blank" rel="noopener" style="padding:12px 18px;font-size:11px">Book a call →</a>
+    </div>
+  </div>
+
+  <section class="hero" style="padding-top:40px">
+    <span class="tag">The path forward · prepared for Via Digital</span>
+    <h1>The <span class="canopy">roadmap</span><br><span class="outline">out of</span> <span class="blue">diagnostics.</span></h1>
+    <p class="hero-sub">Two parts of the strategy are already done, the competitor white space and the audience worksheet, delivered free. Via Digital is a specialist agency, not a managed-service buyer, so the path here is not a retainer. It is a one-time <strong>strategy build</strong> that turns the white space into an operating plan, and two ways to go deeper with Impactable's <strong>tooling and expert network.</strong> Because the diagnostics are in hand, the strategy comes at a discount.</p>
+    <div class="hero-meta">
+      <span>You are here <strong>diagnostics delivered</strong></span>
+      <span>Next <strong>strategy build · $999</strong></span>
+      <span>Then <strong>tooling + experts partnership</strong></span>
+      <span>Date <strong>July 1, 2026</strong></span>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="sec-num">01 / Where this goes</div>
+    <h2 class="sec-title">The path from <em>here.</em></h2>
+    <p class="sec-intro">Scoped for a peer specialist. The room delivered the diagnostics; the strategy build turns them into an operating plan; from there, the deeper relationship is tooling and partnership, not a management handover.</p>
+    <div class="engage">
+      <div class="eng-step e1"><div class="eng-n">You are here</div><div class="eng-h">Diagnostics delivered</div><div class="eng-d">Competitor white space + audience worksheet, the free Competitor Intel Report. The industrial-Mittelstand seam, mapped.</div></div>
+      <div class="eng-step e2"><div class="eng-n">Recommended next</div><div class="eng-h">One-time strategy build</div><div class="eng-d">Positioning, message and offer architecture per persona, and a build-ready roadmap Via Digital owns and runs.</div><div class="eng-price">$999 (normally $1,500)</div></div>
+      <div class="eng-step e3"><div class="eng-n">Then</div><div class="eng-h">Tooling + experts partnership</div><div class="eng-d">DemandSense access for Via Digital's own and clients' campaigns, and a place in the DemandSense experts network.</div><div class="eng-price">scoped on a call</div></div>
+      <div class="eng-step e4"><div class="eng-n">Then</div><div class="eng-h">Deepen the partnership</div><div class="eng-d">Co-marketing on Theresa's authority (Springer, OMX), and referral or white-label overflow both ways.</div></div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="sec-num">02 / The recommended next step</div>
+    <h2 class="sec-title">The one-time <span class="blue">strategy build.</span></h2>
+    <p class="sec-intro">Impactable's Foundational Strategy, scoped to Via Digital's own positioning and lead gen. It takes the intel and the worksheet and turns them into an operating plan: what to say, to whom, and how the launch runs. Normally $1,500, offered at <strong style="color:var(--bone)">$999</strong> because two parts of the strategy are already delivered.</p>
+    <div class="strat">
+      <svg viewBox="0 0 100 100" preserveAspectRatio="none">
+        <path d="M 100 0 Q 80 20, 65 35 T 45 55 Q 30 70, 25 90" stroke="#D4FF3D" stroke-width="1.2" fill="none"/>
+        <circle cx="65" cy="35" r="3" fill="#D4FF3D"/><circle cx="45" cy="55" r="2.5" fill="#7BAA3E"/><circle cx="25" cy="90" r="3" fill="#0099D1"/>
+      </svg>
+      <div class="strat-kick">/// the strategy build</div>
+      <div class="strat-h">Everything in this room, <em>built into a plan.</em></div>
+      <p class="strat-sub">Not a template. The build takes the industrial-Mittelstand seam, the five white-space lanes, and the audience plan and turns them into Via Digital's <strong>operating roadmap</strong>, the message and offer architecture per persona, and the channel and budget direction, yours to run in-house.</p>
+      <div class="strat-body">
+        <div>
+          <div class="strat-incl-label">/// what the build includes</div>
+          <ul class="strat-incl">
+            <li>Positioning and competitive white space, sharpened from the intel</li>
+            <li>Audience and persona targeting, carried from the worksheet</li>
+            <li>Message and offer architecture per persona: what to say, what to put in front of them</li>
+            <li>Channel and funnel plan across LinkedIn and Google, with the data-discipline layer made visible</li>
+            <li>A build-ready 90-day roadmap Via Digital owns</li>
+          </ul>
+        </div>
+        <div class="price-box">
+          <div class="price-label">/// strategy build · one-time</div>
+          <div class="price-num">$999</div>
+          <div class="price-note"><span style="text-decoration:line-through;opacity:0.6">$1,500</span> &nbsp;·&nbsp; two parts delivered</div>
+          <a class="btn btn-primary" href="https://landbot.online/v3/H-2201417-SPMOARYH76NAHLP2/index.html" target="_blank" rel="noopener">Book a call to start →</a>
+        </div>
+      </div>
+      <p class="strat-fine">The $999 rate reflects the free Competitor Intel Report already delivered (competitor white space + audience worksheet). Final scope confirmed on a short call. Full pricing at impactable.marketing/pricing.html.</p>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="sec-num">03 / Go deeper</div>
+    <h2 class="sec-title">Two ways to go <em>deeper</em> as peers.</h2>
+    <p class="sec-intro">Via Digital already runs LinkedIn Ads for a living, so the deeper relationship is not managed service, it is the tooling and the network that give the data-discipline edge the white space calls for. Both are scoped on a call, not a fixed retainer.</p>
+    <div class="aud-grid">
+      <div class="aud-card abm">
+        <div class="aud-kicker">Way 01 · tooling access</div>
+        <div class="aud-name">DemandSense for your accounts</div>
+        <div class="aud-row" style="border-top:none"><span class="k">What</span><span class="v">WebID visitor de-anonymization, audience suppression, day-parting, and HubSpot revenue-influence attribution, for Via Digital's own and clients' campaigns.</span></div>
+        <div class="aud-why"><span class="lbl">▸ Why it fits</span>It is the exact "visible data and tooling layer" White Space 01 names as the widest opening, and it is the edge that lets a boutique out-measure the heavyweights.</div>
+      </div>
+      <div class="aud-card abm">
+        <div class="aud-kicker">Way 02 · the network</div>
+        <div class="aud-name">DemandSense experts partnership</div>
+        <div class="aud-row" style="border-top:none"><span class="k">What</span><span class="v">A place in Impactable's DemandSense experts network: peer collaboration, co-marketing on Theresa's authority (Springer, OMX), and referral or white-label overflow both ways.</span></div>
+        <div class="aud-why"><span class="lbl">▸ Why it fits</span>Theresa's credentialed, published, high-visibility founder brand is a natural fit for the experts positioning, a partnership between specialists, not a vendor relationship.</div>
+      </div>
+    </div>
+    <div class="budget-cap" style="margin-top:18px">
+      <b>No retainer pitch here.</b> Managed service is what Via Digital sells; this path is tooling and partnership. Scope and any commercials are set together on a call. Impactable's full pricing, for reference, is at <a href="https://impactable.marketing/pricing.html" target="_blank" rel="noopener" style="color:var(--blue)">impactable.marketing/pricing.html</a>.
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="sec-num">04 / The method, in the open</div>
+    <h2 class="sec-title">How the <span class="blue">system</span> runs.</h2>
+    <p class="sec-intro">The doctrine behind the worksheet and the tooling, in Impactable's own words. Shared as method and credibility, the same warm-first, signal-led system that powers DemandSense, not a service to buy.</p>
+    <div class="chan-grid">
+      <a class="chan" href="https://impactable.marketing/linkedin-launch.html" target="_blank" rel="noopener">
+        <div class="chan-kick">Method 01 · qualify &amp; nurture</div>
+        <div class="chan-h"><span class="blue">LinkedIn</span> warm-first</div>
+        <div class="chan-d">The warm-first architecture from the worksheet: retargeting tiers, the Clay-scored ABM list, and selective cold, Audience Expansion off, ICP filtered tight.</div>
+        <div class="chan-go">See the LinkedIn method <span class="arr">→</span></div>
+      </a>
+      <a class="chan g" href="https://impactable.marketing/google.html" target="_blank" rel="noopener">
+        <div class="chan-kick">Method 02 · capture demand</div>
+        <div class="chan-h"><span class="clay">LinkedIn + Google</span></div>
+        <div class="chan-d">The compound engine: Google conquest catches "[competitor] Alternative" the moment it is typed, LinkedIn qualifies and nurtures, and the two share signals and audiences.</div>
+        <div class="chan-go">See the LinkedIn + Google system <span class="arr">→</span></div>
+      </a>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="sec-num">05 / Supporting documents</div>
+    <h2 class="sec-title">The <em>leave-behinds.</em></h2>
+    <p class="sec-intro">The two delivered diagnostics, to revisit or circulate internally. The full content lives in this room; shareable document versions can be provided on request.</p>
+    <div class="res-grid">
+      <a class="res-card" onclick="showView('competitor')" style="cursor:pointer">
+        <div class="res-kicker">Document · delivered</div>
+        <div class="res-h">Competitor White Space</div>
+        <div class="res-d">The industrial-Mittelstand seam and the five white-space lanes, with the ten-agency teardown behind the positioning.</div>
+        <span class="res-link">Open in this room →</span>
+      </a>
+      <a class="res-card" onclick="showView('worksheet')" style="cursor:pointer">
+        <div class="res-kicker">Document · delivered</div>
+        <div class="res-h">Audience Targeting Worksheet</div>
+        <div class="res-d">Personas, signal overlays, keyword architecture, negatives, budget framework, and the build order.</div>
+        <span class="res-link">Open in this room →</span>
+      </a>
+      <a class="res-card" href="https://impactable.marketing/pricing.html" target="_blank" rel="noopener">
+        <div class="res-kicker">Reference · pricing</div>
+        <div class="res-h">Full Impactable Pricing</div>
+        <div class="res-d">Every way to work with Impactable, from the free report through the strategy build and beyond.</div>
+        <span class="res-link">View full pricing ↗</span>
+      </a>
+    </div>
+
+    <div class="next">
+      <div class="next-label">/// ready when you are</div>
+      <div class="next-h">Two parts done. Let's <em>build the plan.</em></div>
+      <p class="next-body">The fastest path is a short call: we confirm scope, lock the $999 strategy build, and talk through whether DemandSense tooling or the experts network is the right way to go deeper. Create. Connect. Capture.</p>
+      <div class="hero-cta" style="margin-top:0">
+        <a class="btn btn-primary" href="https://landbot.online/v3/H-2201417-SPMOARYH76NAHLP2/index.html" target="_blank" rel="noopener">Book a call →</a>
+        <button class="btn btn-blue" onclick="showView('competitor')">Revisit the intel →</button>
+        <button class="btn btn-ghost" onclick="showView('overview')">Back to the room →</button>
+      </div>
+    </div>
+  </section>
+
+  <footer class="foot">
+    <div class="foot-line">Prepared by Impactable · LinkedIn Marketing Partner · Roadmap · Via Digital · July 2026 · impactable.com</div>
+  </footer>
+
+</div>
+</div>
+<script>
+function showView(v){
+  document.querySelectorAll('.view').forEach(function(x){x.classList.remove('active')});
+  document.getElementById('view-'+v).classList.add('active');
+  document.querySelectorAll('.ntab').forEach(function(x){x.classList.remove('active')});
+  var t=document.querySelector('.ntab[data-view="'+v+'"]'); if(t){t.classList.add('active')}
+  window.scrollTo({top:0,behavior:'instant'});
+}
+
+var ladderData={
+  1:{c:'var(--canopy)',h:'Rung 01 · CRM &amp; warm lists — the cheapest, highest-intent dollar',b:'First-party uploads: CRM, \u20ac6,600 coaching alumni, webinar registrants, newsletter subscribers. The closer an audience already is to Via Digital, the cheaper the conversion. These are the list assets already owned.',bench:'Benchmark CPL: $75\u2013$150 (Warm 1P / BOFU)'},
+  2:{c:'var(--moss)',h:'Rung 02 · Site &amp; engagers — the founder engine',b:'Insight Tag visitors, ad and video engagers, and the engagers with Theresa\'s content and Thought Leader Ads (~4,800 followers). This is the warm pool most competitors do not have, and it refills continuously from the organic engine.',bench:'Benchmark CPL: $120\u2013$250 (Warm 1P / MOFU)'},
+  3:{c:'var(--blue)',h:'Rung 03 · ABM accounts — the signal-scored middle',b:'A named list of industrial and tech DACH accounts, built in Clay from the Channel Two signals and fed by DemandSense WebID. More efficient than broad cold on any budget because it gives a clean company-level read on engagement.',bench:'Benchmark CPL: $250\u2013$400 (Intent/Fit ABM)'},
+  4:{c:'var(--terracotta)',h:'Rung 04 · Selective cold — awareness fuel, not the closer',b:'One ICP persona at a time. Persona 1 (DACH SaaS/IT marketing leaders) first, then the industrial persona. The priciest dollar in the account, so it earns its budget by feeding the warmer rungs, never by being asked to convert directly.',bench:'Benchmark CPL: $300\u2013$600+ (Very Cold Native)'}
+};
+function setLadder(n){
+  var d=ladderData[n],el=document.getElementById('ladderDetail');
+  el.style.borderLeftColor=d.c;
+  el.innerHTML='<div class="ld-h" style="color:'+d.c+'">'+d.h+'</div>'+d.b+'<div class="ld-bench">\u25b8 '+d.bench+'</div>';
+  document.querySelectorAll('.rung').forEach(function(r){r.classList.remove('active')});
+  document.querySelector('.rung[data-rung="'+n+'"]').classList.add('active');
+}
+document.querySelectorAll('.rung').forEach(function(r){r.addEventListener('click',function(){setLadder(this.getAttribute('data-rung'))})});
+setLadder(1);
+
+var budgetData={
+  warm:{warm:60,abm:25,cold:15,note:'<strong>Warm start (default):</strong> 60 / 25 / 15. Via Digital already has warm inventory from the founder engine, so the efficient warm tier carries the conversion load while ABM sustains pipeline and one cold persona tops up the funnel.'},
+  cold:{warm:40,abm:35,cold:25,note:'<strong>Cold start:</strong> 40 / 35 / 25. For a brand-new offer or vertical with no warm inventory yet, warm is over-weighted relative to its small size because every ABM and cold impression is feeding the retargeting pool. The goal early is to manufacture a warm audience worth retargeting, then rebalance toward the warm-led default.'}
+};
+function setBudget(k){
+  var d=budgetData[k];
+  document.getElementById('bWarm').style.flex=d.warm;document.getElementById('bWarm').textContent=d.warm+'% \u00b7 Warm';
+  document.getElementById('bAbm').style.flex=d.abm;document.getElementById('bAbm').textContent=d.abm+'% \u00b7 ABM';
+  document.getElementById('bCold').style.flex=d.cold;document.getElementById('bCold').textContent=d.cold+'% \u00b7 Cold';
+  document.getElementById('budgetNote').innerHTML=d.note;
+  document.querySelectorAll('.bt-btn').forEach(function(b){b.classList.remove('active')});
+  document.querySelector('.bt-btn[data-budget="'+k+'"]').classList.add('active');
+}
+document.querySelectorAll('.bt-btn').forEach(function(b){b.addEventListener('click',function(){setBudget(this.getAttribute('data-budget'))})});
+setBudget('warm');
+
+var tlData={
+  1:{h:'Week 1 · instrument first',b:'Install the LinkedIn Insight Tag and Google tag, set conversion tracking and <b>CAPI</b>, and connect <b>DemandSense WebID</b> so the company-level visitor pool starts filling day one. Upload CRM, coaching alumni, webinar and newsletter lists as Matched Audiences.'},
+  2:{h:'Weeks 1\u20132 · warm retargeting on',b:'Turn on all <b>Tier 1 warm pools</b> (founder-content engagers, site visitors, list uploads), started broad and filtered lightly to ICP. This is the cheapest pipeline and it compounds as the founder engine feeds it.'},
+  3:{h:'Weeks 2\u20133 · paid search + brand',b:'Launch <b>Google core + brand defense + a separate conquest campaign</b> (5\u20136 keywords). Capture switchers already searching \u201cLinkedIn Ads Agentur\u201d and \u201c[competitor] Alternative,\u201d and feed every click into Tier 1.'},
+  4:{h:'Weeks 3\u20134 · build the ABM list',b:'Stack the top signals in <b>Clay</b>, enrich the buying committee, score the accounts, and sync the top tier as a <b>Matched Audience</b>. Frequency-cap and sequence. Feed DemandSense WebID visitors in continuously.'},
+  5:{h:'Weeks 4\u201312 · cold + tune from signals',b:'Open <b>cold Persona 1</b> (single audience, Audience Expansion off); add Persona 2 once its pool is established. Down-vote off-ICP companies in DemandSense weekly, refresh intent and trigger lists, and shift budget toward the tiers that are converting.'}
+};
+function setTL(n){
+  var d=tlData[n],el=document.getElementById('tlDetail');
+  el.innerHTML='<div class="td-h">'+d.h+'</div>'+d.b;
+  document.querySelectorAll('.tl-step').forEach(function(s){s.classList.remove('active')});
+  document.querySelector('.tl-step[data-step="'+n+'"]').classList.add('active');
+}
+document.querySelectorAll('.tl-step').forEach(function(s){s.addEventListener('click',function(){setTL(this.getAttribute('data-step'))})});
+setTL(1);
+</script>
+</body>
+</html>
