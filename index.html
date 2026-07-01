@@ -436,6 +436,27 @@ table.matrix tr.ref td{background:rgba(212,255,61,0.06)}
 table.matrix tr.ref td:first-child{color:var(--canopy);opacity:1}
 .sat-pill.med{background:rgba(255,182,39,0.13);color:var(--clay);border-color:var(--clay)}
 .ws-card.opening{border-left-color:var(--blue);background:linear-gradient(160deg,#14141a 0%,#0c0c10 100%)}
+
+/* ===== LIGHT MODE ===== */
+body.light{
+  --asphalt:#F1EEE6;--concrete:#FBFAF5;--court:#E3DFD3;
+  --bone:#16161A;--chalk:#33333B;--chalk-dim:#78756D;
+  --line:rgba(20,20,24,0.12);--line-soft:rgba(20,20,24,0.06);
+  --canopy:#4F7A1E;--moss:#567F27;--blue:#0077A3;--blue-soft:#2E8FB8;--clay:#B57400;
+  background:var(--asphalt);
+}
+body.light::before{background-image:radial-gradient(circle at 1px 1px,rgba(20,20,24,0.045) 1px,transparent 0)}
+body.light .nav{background:rgba(241,238,230,0.94)}
+body.light .tag{background:rgba(255,255,255,0.65)}
+body.light .strat,body.light .uvp,body.light .budget,body.light .rec,body.light .next,body.light .ws-card.opening{background:linear-gradient(160deg,#FBFAF5 0%,#F0ECE2 100%)}
+body.light .chan:hover,body.light .rung:hover,body.light .tl-step:hover,body.light .res-card:hover{background:#ECE7DC}
+body.light table.matrix th{background:#EBE7DB;color:var(--bone)}
+body.light .price-box{background:rgba(0,0,0,0.04)}
+body.light .budget-toggle{background:rgba(0,0,0,0.05)}
+body.light .comp-card.subject{background:linear-gradient(160deg,rgba(79,122,30,0.07),var(--concrete) 55%)}
+body.light .sig.edge{background:linear-gradient(160deg,rgba(79,122,30,0.06),var(--concrete) 55%)}
+.theme-toggle{border-color:var(--court)!important}
+.theme-toggle::before{content:'';width:9px;height:9px;border-radius:50%;border:1.5px solid currentColor;background:linear-gradient(90deg,currentColor 50%,transparent 50%);display:inline-block}
 </style>
 </head>
 <body>
@@ -449,6 +470,7 @@ table.matrix tr.ref td:first-child{color:var(--canopy);opacity:1}
       <button class="ntab" data-view="competitor" onclick="showView('competitor')">Competitor Intel</button>
       <button class="ntab" data-view="worksheet" onclick="showView('worksheet')">Audience Worksheet</button>
       <button class="ntab" data-view="roadmap" onclick="showView('roadmap')">Roadmap</button>
+      <button class="ntab theme-toggle" id="themeToggle" onclick="toggleTheme()">Light mode</button>
       <a class="ntab-cta" href="https://landbot.online/v3/H-2201417-SPMOARYH76NAHLP2/index.html" target="_blank" rel="noopener">Book a Call →</a>
     </div>
   </div>
@@ -1304,19 +1326,19 @@ table.matrix tr.ref td:first-child{color:var(--canopy);opacity:1}
   <section class="sec">
     <div class="sec-num">05 / Supporting documents</div>
     <h2 class="sec-title">The <em>leave-behinds.</em></h2>
-    <p class="sec-intro">The two delivered diagnostics, to revisit or circulate internally. The full content lives in this room; shareable document versions can be provided on request.</p>
+    <p class="sec-intro">The two delivered diagnostics as shareable documents, open them to read or circulate internally. The full content also lives in this room, on the Competitor Intel and Audience Worksheet tabs.</p>
     <div class="res-grid">
-      <a class="res-card" onclick="showView('competitor')" style="cursor:pointer">
+      <a class="res-card" href="https://docs.google.com/document/d/1qm-GSjsVpprQrqwcY07j35qg1k6V3xapR96mkYs-ROo/edit" target="_blank" rel="noopener">
         <div class="res-kicker">Document · delivered</div>
         <div class="res-h">Competitor White Space</div>
         <div class="res-d">The industrial-Mittelstand seam and the five white-space lanes, with the ten-agency teardown behind the positioning.</div>
-        <span class="res-link">Open in this room →</span>
+        <span class="res-link">Open the document ↗</span>
       </a>
-      <a class="res-card" onclick="showView('worksheet')" style="cursor:pointer">
+      <a class="res-card" href="https://docs.google.com/document/d/1ietcPPeY94L9zTb50DbJUtkdT31ZLSlszYn7AsjWjys/edit" target="_blank" rel="noopener">
         <div class="res-kicker">Document · delivered</div>
         <div class="res-h">Audience Targeting Worksheet</div>
         <div class="res-d">Personas, signal overlays, keyword architecture, negatives, budget framework, and the build order.</div>
-        <span class="res-link">Open in this room →</span>
+        <span class="res-link">Open the document ↗</span>
       </a>
       <a class="res-card" href="https://impactable.marketing/pricing.html" target="_blank" rel="noopener">
         <div class="res-kicker">Reference · pricing</div>
@@ -1400,6 +1422,18 @@ function setTL(n){
 }
 document.querySelectorAll('.tl-step').forEach(function(s){s.addEventListener('click',function(){setTL(this.getAttribute('data-step'))})});
 setTL(1);
+
+// ===== Light / dark theme =====
+function applyTheme(t){
+  if(t==='light'){document.body.classList.add('light')}else{document.body.classList.remove('light')}
+  var b=document.getElementById('themeToggle'); if(b){b.textContent=(t==='light')?'Dark mode':'Light mode'}
+}
+function toggleTheme(){
+  var next=document.body.classList.contains('light')?'dark':'light';
+  applyTheme(next);
+  try{localStorage.setItem('ir-theme',next)}catch(e){}
+}
+(function(){var t='dark';try{var s=localStorage.getItem('ir-theme');if(s){t=s}}catch(e){}applyTheme(t)})();
 </script>
 </body>
 </html>
